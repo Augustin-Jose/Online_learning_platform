@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="post">
+        {% csrf_token %}
+	<center>
+	<h1>Doubts</h1>
+		<table><tr>
+			
+			<tr><td>Doubts</td>
+			<td><textarea name="doubt" placeholder="Ask your Doubts"></textarea></td>
+		</tr><tr>
+<label for="date">Date:</label>
+        <input type="date"  name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time"  name="time"  step="300" required>
+		</table><br>
+		<input type="submit" value="OK">
+    </center></tr>
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval Form</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Admin Manage Teacher</h2>
+
+    <form action="" method="post">
+       
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Status</th>
+            <th></th>
+            
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td> </td>
+            <td><a href="#" class="approval-link" data-value="approve">Approve/</a>
+    <a href="#" class="approval-link" data-value="reject">Reject</a>
+    <input type="hidden" id="approval" name="approval" required></td>
+           
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+</form>
+</body>
+</html>
