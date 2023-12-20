@@ -19,5 +19,17 @@ def paymentDetails(request):
         'a' : obj
     }
     return render(request, 'payment/paymentDetails.html',context)
+def approve(request,idd):
+    obj=Payment.objects.get(payment_id=idd)
+    obj.status='approve'
+    obj.save()
+    return paymentDetails(request)
+
+def reject(request, idd):
+    obj = Payment.objects.get(payment_id=idd)
+    obj.status = 'reject'
+    obj.save()
+    return paymentDetails(request)
+
 
 

@@ -86,9 +86,9 @@ WSGI_APPLICATION = 'learning_platform.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'onlinelearningplatform',
+        'NAME': 'learning_platform',
         'USER':'root',
-        'PASSWORD':'root',
+        'PASSWORD':'',
         'HOST':'localhost',
         'PORT':''
     }

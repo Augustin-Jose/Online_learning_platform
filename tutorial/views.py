@@ -14,4 +14,8 @@ def classes(request):
     return render(request, 'tutorial/classes.html')
 
 def view_class(request):
-    return render(request,'tutorial/viewclass.html')
+    obj=Tutorial.objects.all()
+    context={
+        'a':obj
+    }
+    return render(request,'tutorial/viewclass.html',context)

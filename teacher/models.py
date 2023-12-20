@@ -8,6 +8,7 @@ class Teacher(models.Model):
     password = models.CharField(max_length=255)
     qualification = models.CharField(max_length=255)
     subject = models.CharField(max_length=255)
+    status = models.CharField(max_length=50)
 
     class Meta:
         managed = False
