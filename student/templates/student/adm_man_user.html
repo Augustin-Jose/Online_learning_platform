@@ -46,9 +46,11 @@
             <td>{{ i.a }}</td>
             <td>{{ i.gender }}</td>
             <td>{{ i.age }}</td>
-            <td><a href="/student/ aaaaa/{{ i.student_id }}" class="edit-link" data-value="edit">Edit/</a>
-         <a href="/student/delete/{{ i.student_id }}" class="delete-link" data-value="delete">Delete/</a></td>
-        </tr>{% endfor %}
+            <td>
+            <a href="/student/ edit{{ i.student_id }}" class="edit-link" data-value="edit">Edit/</a>
+         <a href="/student/delete{{ i.student_id }}" class="delete-link" data-value="delete">Delete</a></td>
+
+             </tr>{% endfor %}
         <!-- Add more rows as needed -->
     </table>
 

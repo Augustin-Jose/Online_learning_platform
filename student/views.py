@@ -14,7 +14,7 @@ def student(request):
         obj.save()
     return render(request,'student/student.html')
 
-def student_edit(request, idd):
+def student_edit(request,idd):
     ob = Student.objects.get(student_id=idd)
     context = {
         'e': ob,
@@ -24,31 +24,31 @@ def student_edit(request, idd):
         obj.name = request.POST.get('name')
         obj.password = request.POST.get('password')
         obj.age = request.POST.get('age')
-        obj.gender= request.POST.get('gender')
+        obj.gender = request.POST.get('gender')
         obj.address = request.POST.get('address')
-        obj.status='pending'
+        obj.status = 'pending'
         obj.save()
         return admin_man_user(request)
-    return render(request,'student/studentedit.html', context)
+    return render(request, 'student/studentedit.html', context)
 
 
 def admin_man_user(request):
-    obj=Student.objects.all()
-    context={
-        'a':obj
+    obj = Student.objects.all()
+    context = {
+        'a': obj
     }
     return render(request, 'student/adm_man_user.html',context)
 
 def edit(request,idd):
-    obj=Student.objects.get(student_id=idd)
-    obj.status='edited'
+    obj = Student.objects.get(student_id=idd)
+    obj.status = 'edited'
     obj.save()
     return admin_man_user(request)
 
 
 
 def delete(request,idd):
-    obj=Student.objects.get(student_id=idd)
-    obj.status='deleted'
+    obj = Student.objects.get(student_id=idd)
+    obj.status = 'deleted'
     obj.delete()
     return admin_man_user(request)
