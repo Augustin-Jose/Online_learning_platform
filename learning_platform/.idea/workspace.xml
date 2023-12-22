@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b7b8fa4-6773-4507-a7ee-0c6355e081db" name="learning_platform.https://github.com/Augustin-Jose/Online_learning_platform.git" comment="changes in datetime" />
     <list id="61c3551f-c597-45ea-a484-de8f70cb76bc" name="Default" comment="" />
+    <list default="true" id="6b7b8fa4-6773-4507-a7ee-0c6355e081db" name="learning_platform.https://github.com/Augustin-Jose/Online_learning_platform.git" comment="changes in datetime" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +64,7 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tutorial/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="94">
               <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -232,24 +232,6 @@
               <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="tutorial" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -346,10 +328,10 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32708934" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="7" visible="true" weight="0.3299712" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.3299712" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.24639769" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299712" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15503356" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3299712" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15503356" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -397,6 +379,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="learning_platform.https://github.com/Augustin-Jose/Online_learning_platform.git" />
     <MESSAGE value="changes in datetime" />
     <option name="LAST_COMMIT_MESSAGE" value="changes in datetime" />
@@ -723,7 +708,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tutorial/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="94">
           <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
