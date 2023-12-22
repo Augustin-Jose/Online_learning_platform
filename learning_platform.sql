@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2023 at 11:33 PM
+-- Generation Time: Dec 20, 2023 at 05:31 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `onlinelearningplatform`
+-- Database: `learning_platform`
 --
 
 -- --------------------------------------------------------
@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `communication` (
   `comm_id` int(11) NOT NULL,
   `notification` varchar(100) NOT NULL,
-  `date` varchar(15) NOT NULL,
-  `time` int(11) NOT NULL
+  `date` date NOT NULL,
+  `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `communication` (
 --
 
 INSERT INTO `communication` (`comm_id`, `notification`, `date`, `time`) VALUES
-(1, 't78', '2023-11-15', 12);
+(1, 't78', '2023-11-15', '00:00:12');
 
 -- --------------------------------------------------------
 
@@ -71,9 +71,17 @@ CREATE TABLE `doubts` (
   `doubt_id` int(11) NOT NULL,
   `doubt` varchar(100) NOT NULL,
   `reply` varchar(100) NOT NULL,
-  `date` varchar(50) NOT NULL,
-  `time` int(11) NOT NULL
+  `date` date NOT NULL,
+  `time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `doubts`
+--
+
+INSERT INTO `doubts` (`doubt_id`, `doubt`, `reply`, `date`, `time`) VALUES
+(5, 'html form', 'pending', '2023-12-18', '00:00:06'),
+(6, '', 'uyhnoik', '2023-12-18', '00:00:15');
 
 -- --------------------------------------------------------
 
@@ -89,6 +97,13 @@ CREATE TABLE `login` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`login_id`, `username`, `password`, `type`, `user_id`) VALUES
+(1, 'augustin', 'reh5reh4', '', 12344);
+
 -- --------------------------------------------------------
 
 --
@@ -97,13 +112,22 @@ CREATE TABLE `login` (
 
 CREATE TABLE `payment` (
   `payment_id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
   `payment method` varchar(100) NOT NULL,
-  `amount` int(11) NOT NULL,
-  `date` varchar(20) NOT NULL,
-  `time` int(11) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `amount` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`payment_id`, `username`, `payment method`, `amount`, `date`, `time`, `status`) VALUES
+(1, 'augustin', 'qrCode', '100', '2023-12-18', '00:00:12', 'pending'),
+(2, 'gfg', 'card', '5656', '2023-12-20', '00:00:15', 'reject'),
+(3, 'gfg', 'qrCode', '5656', '2023-12-20', '15:11:30', 'reject');
 
 -- --------------------------------------------------------
 
@@ -115,9 +139,18 @@ CREATE TABLE `progress` (
   `progress_id` int(11) NOT NULL,
   `course_id` int(11) NOT NULL,
   `progress` varchar(255) NOT NULL,
-  `teacher_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL
+  `student_id` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `progress`
+--
+
+INSERT INTO `progress` (`progress_id`, `course_id`, `progress`, `student_id`, `teacher_id`) VALUES
+(1, 1, '23', 0, 1),
+(3, 1, '23', 1, 1),
+(4, 1, '23', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -135,6 +168,13 @@ CREATE TABLE `student` (
   `address` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`student_id`, `name`, `password`, `gender`, `age`, `status`, `address`) VALUES
+(4, 'alvin', 'dfff', 'male', '32', 'edited', 'nel');
+
 -- --------------------------------------------------------
 
 --
@@ -145,9 +185,17 @@ CREATE TABLE `teacher` (
   `teacher_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `qualifiaction` varchar(255) NOT NULL,
-  `subject` varchar(255) NOT NULL
+  `qualification` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `status` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teacher`
+--
+
+INSERT INTO `teacher` (`teacher_id`, `name`, `password`, `qualification`, `subject`, `status`) VALUES
+(1, 'alvin', 'dfsfdg', 'UG', 'html', 'reject');
 
 -- --------------------------------------------------------
 
@@ -162,6 +210,13 @@ CREATE TABLE `tutorial` (
   `teacher_id` int(11) NOT NULL,
   `subject` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tutorial`
+--
+
+INSERT INTO `tutorial` (`class_id`, `video`, `notes`, `teacher_id`, `subject`) VALUES
+(1, 'Diagram2.dia', 'Diagram2.dia', 1, 'html');
 
 --
 -- Indexes for dumped tables
@@ -241,43 +296,43 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `doubts`
 --
 ALTER TABLE `doubts`
-  MODIFY `doubt_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `doubt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `progress`
 --
 ALTER TABLE `progress`
-  MODIFY `progress_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `progress_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `teacher`
 --
 ALTER TABLE `teacher`
-  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tutorial`
 --
 ALTER TABLE `tutorial`
-  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `class_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

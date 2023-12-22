@@ -35,7 +35,7 @@
             <td>{{ i.course }}</td>
             <td>{{ i.duration }}</td>
             <td>{{ i.course_fee }}</td>
-            <td><button>Pay Now</button></td>
+            <td><a href="/payment/payment/{{ i.course_id }}">Pay Now</a></td>
         </tr>
         {% endfor %}
         <!-- Add more rows as needed -->

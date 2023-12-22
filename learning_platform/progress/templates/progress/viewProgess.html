@@ -25,13 +25,14 @@
 
     <table>
         <tr>
-            <th>Course_id</th>
+            <th>Course</th>
             <th>Progress</th>
-        </tr>{% for i in a %} }}
+
+        </tr>{% for i in a %}
         <tr>
-            <td>{{ i.course_id}}</td>
+            <td>{{ i.course.course}}</td>
             <td>{{ i.progress }}</td>
-        </tr>{% endfor %}
+               </tr>{% endfor %}
         <!-- Add more rows as needed -->
     </table>
 

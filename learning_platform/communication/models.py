@@ -4,8 +4,8 @@ from django.db import models
 class Communication(models.Model):
     comm_id = models.AutoField(primary_key=True)
     notification = models.CharField(max_length=100)
-    date = models.CharField(max_length=15)
-    time = models.IntegerField()
+    date = models.DateField()
+    time = models.TimeField()
 
     class Meta:
         managed = False

@@ -6,6 +6,7 @@ def progress(request):
         obj = Progress()
 
         obj.course_id = 1
+
         obj.progress = request.POST.get('progress')
 
         obj.teacher_id = 1

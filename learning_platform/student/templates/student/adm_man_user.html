@@ -26,9 +26,9 @@
 
     <h2>Admin Manage Users</h2>
 
-    <form action="" method="post">
+    <form  method="post">
      
-
+{% csrf_token %}
 
     <h2>User Details</h2>
 
@@ -40,15 +40,17 @@
             <th>Age</th>
             <th></th>
             
-        </tr>
+        </tr>{% for i in a %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><button>Edit</button>
-            <button>Delete</button></td>
-        </tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.a }}</td>
+            <td>{{ i.gender }}</td>
+            <td>{{ i.age }}</td>
+            <td>
+            <a href="/student/ edit_profile/{{ i.student_id }}">Edit/</a>
+         <a href="/student/delete/{{ i.student_id }}">Delete</a></td>
+
+             </tr>{% endfor %}
         <!-- Add more rows as needed -->
     </table>
 

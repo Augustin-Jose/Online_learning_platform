@@ -45,9 +45,9 @@
             <td>{{ i.date }}</td>
             <td>{{ i.time }}</td>
             <td>{{ i.status }}</td>
-            <td><a href="#" class="approval-link" data-value="approve">Approve/</a>
-    <a href="#" class="approval-link" data-value="reject">Reject</a>
-    <input type="hidden" id="approval" name="approval" required></td>
+            <td><a href="/payment/approved/{{ i.payment_id }}" class="approval-link" data-value="approve">Approve/</a>
+    <a href="/payment/rejected/{{ i.payment_id }}" class="approval-link" data-value="reject">Reject</a>
+{#    <input type="hidden" id="approval" name="approval" required></td>#}
         </tr>
         {% endfor %}
         <!-- Add more rows as needed -->

@@ -11,12 +11,13 @@ def doubts(request):
         obj.save()
     return render(request, 'doubts/doubts.html')
 
-def reply(request):
-    if request.method == 'POST':
-        obj = Doubts()
-        obj.reply = request.POST.get('reply')
+def reply(request,idd):
 
+    if request.method == 'POST':
+        obj = Doubts.objects.get(doubt_id=idd)
+        obj.reply = request.POST.get('reply')
         obj.save()
+        return view_doubt_post_reply(request)
     return render(request, 'doubts/reply.html')
 
 def view_doubt_post_reply(request):

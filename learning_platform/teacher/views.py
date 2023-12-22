@@ -15,10 +15,25 @@ def teacher(request):
 
 
 
-def add_teacher(request):
-    return render(request,'teacher/add teacher.html')
-
 
 
 def adm_man_teacher(request):
-    return render(request,'teacher/adminmanage_teacher.html')
+    obj=Teacher.objects.all()
+    context={
+        'a':obj
+    }
+
+
+    return render(request,'teacher/adminmanage_teacher.html',context)
+
+def approve(request, idd):
+    obj = Teacher.objects.get(teacher_id=idd)
+    obj.status = 'approve'
+    obj.save()
+    return adm_man_teacher(request)
+
+def reject(request, idd):
+    obj = Teacher.objects.get(teacher_id=idd)
+    obj.status = 'reject'
+    obj.save()
+    return adm_man_teacher(request)
