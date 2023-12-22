@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2023 at 05:31 PM
+-- Generation Time: Dec 21, 2023 at 11:02 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -80,8 +80,10 @@ CREATE TABLE `doubts` (
 --
 
 INSERT INTO `doubts` (`doubt_id`, `doubt`, `reply`, `date`, `time`) VALUES
-(5, 'html form', 'pending', '2023-12-18', '00:00:06'),
-(6, '', 'uyhnoik', '2023-12-18', '00:00:15');
+(5, 'html form', 'dv', '2023-12-18', '00:00:06'),
+(6, '', 'defszvgsw', '2023-12-18', '00:00:15'),
+(7, 'fgumj', 'dsrvg', '2023-12-21', '13:15:14'),
+(8, 'edfsa', 'xbghftguf', '2023-12-21', '13:15:25');
 
 -- --------------------------------------------------------
 
@@ -125,9 +127,10 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`payment_id`, `username`, `payment method`, `amount`, `date`, `time`, `status`) VALUES
-(1, 'augustin', 'qrCode', '100', '2023-12-18', '00:00:12', 'pending'),
+(1, 'augustin', 'qrCode', '100', '2023-12-18', '00:00:12', 'reject'),
 (2, 'gfg', 'card', '5656', '2023-12-20', '00:00:15', 'reject'),
-(3, 'gfg', 'qrCode', '5656', '2023-12-20', '15:11:30', 'reject');
+(3, 'gfg', 'qrCode', '5656', '2023-12-20', '15:11:30', 'reject'),
+(4, 'adaf', 'upi', '5465', '2023-12-21', '13:41:07', 'approve');
 
 -- --------------------------------------------------------
 
@@ -173,7 +176,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`student_id`, `name`, `password`, `gender`, `age`, `status`, `address`) VALUES
-(4, 'alvin', 'dfff', 'male', '32', 'edited', 'nel');
+(6, 'alvin', 'reh5reh4', 'male', '10', 'pending', 'helloa');
 
 -- --------------------------------------------------------
 
@@ -195,7 +198,7 @@ CREATE TABLE `teacher` (
 --
 
 INSERT INTO `teacher` (`teacher_id`, `name`, `password`, `qualification`, `subject`, `status`) VALUES
-(1, 'alvin', 'dfsfdg', 'UG', 'html', 'reject');
+(1, 'alvin', 'dfsfdg', 'UG', 'html', 'approve');
 
 -- --------------------------------------------------------
 
@@ -296,7 +299,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT for table `doubts`
 --
 ALTER TABLE `doubts`
-  MODIFY `doubt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `doubt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -308,7 +311,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `progress`
@@ -320,7 +323,7 @@ ALTER TABLE `progress`
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `teacher`
