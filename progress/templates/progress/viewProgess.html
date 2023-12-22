@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Progress</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>View Progress</h2>
+
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Progress</th>
+        </tr>{% for i in a %}
+        <tr>
+            <td>{{ i.course.course}}</td>
+            <td>{{ i.progress }}</td>
+        </tr>{% endfor %}
+        <!-- Add more rows as needed -->
+    </table>
+
+</body>
+</html>

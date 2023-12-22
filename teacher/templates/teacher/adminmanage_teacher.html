@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approval Form</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Admin Manage Teacher</h2>
+
+    <form action="" method="post">
+       
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Qualification</th>
+            <th>Subject</th>
+            <th>password</th>
+            <th>status</th>
+
+            <th></th>
+            
+        </tr>{% for i in a %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.qualification }}</td>
+            <td>{{ i.subject }}</td>
+            <th>{{i.password }}X</th>
+            <th>{{ i.status }}</th>
+
+{#            <td></td>#}
+
+            <td><a href="/teacher/approve/{{ i.teacher_id }}" class="approval-link" data-value="approve">Approve/</a>
+    <a href="/teacher/reject/{{ i.teacher_id }}" class="approval-link" data-value="reject">Reject</a>
+    <input type="hidden" id="approval" name="approval" required></td>
+         {% endfor %}
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+</form>
+</body>
+</html>
