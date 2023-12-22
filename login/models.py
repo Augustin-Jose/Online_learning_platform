@@ -1,6 +1,9 @@
 from django.db import models
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c1edbc4fc6a75406916eeeae4b4d0b2b2164d7ce
 # Create your models here.
 
 class Login(models.Model):

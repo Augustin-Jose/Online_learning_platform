@@ -47,8 +47,13 @@
             <td>{{ i.gender }}</td>
             <td>{{ i.age }}</td>
             <td>
+<<<<<<< HEAD
             <a href="/student/ edit_profile/{{ i.student_id }}">Edit/</a>
          <a href="/student/delete/{{ i.student_id }}">Delete</a></td>
+=======
+            <a href="/student/ edit{{ i.student_id }}" class="edit-link" data-value="edit">Edit/</a>
+         <a href="/student/delete{{ i.student_id }}" class="delete-link" data-value="delete">Delete</a></td>
+>>>>>>> c1edbc4fc6a75406916eeeae4b4d0b2b2164d7ce
 
              </tr>{% endfor %}
         <!-- Add more rows as needed -->

@@ -11,6 +11,7 @@ def doubts(request):
         obj.save()
     return render(request, 'doubts/doubts.html')
 
+<<<<<<< HEAD
 def reply(request,idd):
 
     if request.method == 'POST':
@@ -18,6 +19,14 @@ def reply(request,idd):
         obj.reply = request.POST.get('reply')
         obj.save()
         return view_doubt_post_reply(request)
+=======
+def reply(request):
+    if request.method == 'POST':
+        obj = Doubts()
+        obj.reply = request.POST.get('reply')
+
+        obj.save()
+>>>>>>> c1edbc4fc6a75406916eeeae4b4d0b2b2164d7ce
     return render(request, 'doubts/reply.html')
 
 def view_doubt_post_reply(request):

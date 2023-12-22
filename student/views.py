@@ -29,7 +29,11 @@ def student_edit(request,idd):
         obj.status = 'pending'
         obj.save()
         return admin_man_user(request)
+<<<<<<< HEAD
     return render(request, 'student/studentedit.html',context)
+=======
+    return render(request, 'student/studentedit.html', context)
+>>>>>>> c1edbc4fc6a75406916eeeae4b4d0b2b2164d7ce
 
 
 def admin_man_user(request):
