@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,16 +10,17 @@
         {% csrf_token %}
 	<center>
 	<h1>Doubts</h1>
+        <br><br>
 		<table><tr>
 			
 			<tr><td>Doubts</td>
-			<td><textarea name="doubt" placeholder="Ask your Doubts"></textarea></td>
+			<td><textarea name="doubt" placeholder="Ask your Doubts" required="" class="form-control"></textarea></td>
 		</tr><tr>
 <label for="date">Date:</label>
-        <input type="date"  name="date" required>
+        <input type="date"  name="date" required="" class="form-control">
 
         <label for="time">Time:</label>
-        <input type="time"  name="time"  step="300" required>
+        <input type="time"  name="time"  step="300" required="" class="form-control">
 		</table><br>
 		<input type="submit" value="OK">
     </center></tr>
@@ -25,3 +28,4 @@
 
 </body>
 </html>
+{% endblock %}

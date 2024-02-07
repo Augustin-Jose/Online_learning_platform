@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from temp import  views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,5 +29,7 @@ urlpatterns = [
     url('student/', include('student.url')),
     url('teacher/', include('teacher.url')),
     url('tutorial/',include('tutorial.url')),
+    url('temp/', include('temp.url')),
+    url('$',views.index),
 
 ]

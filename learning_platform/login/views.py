@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from login.models import Login
 
@@ -5,9 +6,29 @@ from login.models import Login
 
 def login(request):
     if request.method == 'POST':
-        obj = Login()
-        obj.username = request.POST.get('username')
-        obj.password = request.POST.get('password')
-        obj.user_id=request.POST.get('user_id')
-        obj.save()
+
+        uname = request.POST.get("username")
+        passw = request.POST.get("password")
+        obj = Login.objects.filter(username=uname, password=passw)
+        tp = ""
+
+        for ob in obj:
+            tp = ob.type
+            uid = ob.u_id
+            if tp == "admin":
+                request.session["u_id"] = uid
+                return HttpResponseRedirect('/temp/admin/')
+            elif tp == "student":
+                request.session["u_id"] = uid
+                return HttpResponseRedirect('/temp/student/')
+            elif tp == "teacher":
+                request.session["u_id"] = uid
+                return HttpResponseRedirect('/temp/teacher/')
+            else:
+                objlist = "username or password incorrect....please try again....!"
+                context = {
+                    'msg': objlist,
+                }
+            return render(request, 'login/login.html', context)
+
     return render(request, 'login/login.html')

@@ -1,3 +1,5 @@
+{% extends 'temp/index2.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,24 +13,24 @@
 		<table>
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="name"></td>
+				<td><input type="text" name="name" required="" class="form-control"></td>
 			</tr>
 
 				<tr>
 					<td>Address </td>
-				<td><input type="text" name="address"></td>
+				<td><input type="text" name="address" required="" class="form-control"></td>
 			</tr>
 				<tr>
 					<td>password </td>
-				<td><input type="text" name="password"></td>
+				<td><input type="text" name="password" required="" class="form-control"></td>
 			</tr>
 				<tr><td>Gender</td>
-				<td><input type="radio" name="gender" value="male">Male
+				<td><input type="radio" name="gender" value="male" required="" class="form-control">Male
 				
-				<input type="radio" name="gender" value="female">Female </td>
+				<input type="radio" name="gender" value="female" required="" class="form-control">Female </td>
 			</tr>
 				<tr><td>Age </td>
-				<td><input type="number" name="age"></td>
+				<td><input type="number" name="age" required="" class="form-control"></td>
 			</tr></center></table><br>
                 <input type="submit" value="Register">
 
@@ -37,3 +39,4 @@
 
 </body>
 </html>
+{% endblock %}

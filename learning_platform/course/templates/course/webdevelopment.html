@@ -1,0 +1,66 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Learning Platform</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">WebDev Platform</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/progress/view/">Progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubts/">Doubts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubt_reply/">View Reply</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<div class="container mt-4" id="content">
+    <h2>Web Development </h2><br>
+    <p>Web development using Django offers a robust and efficient framework for building dynamic web applications with Python. Leveraging the Model-View-Controller (MVC) architectural pattern, Django simplifies the development process by providing a high-level, batteries-included environment. Developers can focus on creating feature-rich applications without dealing with low-level details.
+
+Django's Object-Relational Mapping (ORM) system facilitates database interactions, enabling seamless integration with databases like MySQL. The framework's built-in authentication, security, and URL routing streamline common tasks. Templates, powered by Django's template engine, allow for the creation of dynamic and reusable HTML content.
+
+Furthermore, Django encourages the DRY (Don't Repeat Yourself) principle, enhancing code maintainability. Its admin interface automates administrative tasks, reducing the effort required for backend management.
+
+In the realm of online learning platforms, Django facilitates content management, user authentication, and data organization. Leveraging its versatility, developers can create engaging platforms with interactive features. As a result, Django stands as a powerful choice for web development, fostering rapid and scalable solutions for a variety of applications, including online learning.</p>
+    <!-- Your web development content goes here -->
+</div>
+
+
+<!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript code goes here (if needed) -->
+
+</body>
+</html>
+
+
+{% endblock %}

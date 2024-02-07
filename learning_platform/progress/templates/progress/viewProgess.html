@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 80px;
         }
         table, th, td {
             border: 1px solid black;
@@ -17,10 +19,11 @@
             padding: 10px;
             text-align: left;
         }
+
     </style>
 </head>
 <body>
-
+<br><br><br>
     <h2>View Progress</h2>
 
     <table>
@@ -38,3 +41,4 @@
 
 </body>
 </html>
+{% endblock %}

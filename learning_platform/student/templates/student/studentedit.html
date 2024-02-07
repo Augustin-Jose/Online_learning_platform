@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,26 +10,27 @@
         {% csrf_token %}
         <center>
 		<h1>Student</h1>
+            <br><br><br>
 		<table>
 			<tr>
 				<td>Name</td>
-				<td><input type="text" name="name" value="{{ e.name }}"></td>
+				<td><input type="text" name="name" value="{{ e.name }}" required="" class="form-control"></td>
 			</tr>
 
 				<tr>
 					<td>Address </td>
-				<td><input type="text" name="address"  value="{{ e.address }}"></td>
+				<td><input type="text" name="address"  value="{{ e.address }} required="" class="form-control""></td>
 			</tr>
 				<tr>
 					<td>password </td>
-				<td><input type="text" name="password" value="{{ e.password }}"> </td>
+				<td><input type="text" name="password" value="{{ e.password }} required="" class="form-control""> </td>
 			</tr>
 				<tr><td>Gender</td>
-				<td><input type="radio" name="gender" value="male" checked="">Male
-				<input type="radio" name="gender" value="female">Female </td>
+				<td><input type="radio" name="gender" value="male" checked="" required="" class="form-control">Male
+				<input type="radio" name="gender" value="female" required="" class="form-control">Female </td>
 			</tr>
 				<tr><td>Age </td>
-				<td><input type="number" name="age" value="{{ e.age }}"></td>
+				<td><input type="number" name="age" value="{{ e.age }}" required="" class="form-control"></td>
 			</tr></center></table><br>
                 <input type="submit" value="update">
     </form>
@@ -36,3 +39,4 @@
 
 </body>
 </html>
+{% endblock %}

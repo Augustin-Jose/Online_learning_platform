@@ -1,3 +1,5 @@
+{%  extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,10 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 50px;
+            position: relative;
+            padding:20px;
+            top:50px;
         }
         table, th, td {
             border: 1px solid black;
@@ -21,7 +26,7 @@
 </head>
 <body>
 <form method="post">
-    <h2>View Course</h2>
+{#    <h2>View Course</h2>#}
 
     <table>
         <tr>
@@ -41,3 +46,4 @@
 </form>
 </body>
 </html>
+{%  endblock %}

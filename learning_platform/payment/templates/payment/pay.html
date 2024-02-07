@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Form</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+
 
         form {
             background-color: white;
@@ -57,19 +50,18 @@
 
     <form  method="post">
         {% csrf_token %}
-        <label for="cashHolderName">Cash Holder Name:</label>
-        <input type="text" id="cashHolderName" name="username" required>
+
 
         <label for="paymentMode">Payment Method</label>
-        <select id="paymentMode" name="payment_method" required>
+        <select id="paymentMode" name="payment_method" required="" class="form-control">
             <option value="qrCode">QR Code</option>
             <option value="upi">UPI</option>
             <option value="card">Card</option>
             <option value="InternetB">Internet Banking</option>
         </select>
 
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" value="{{ a.course_fee }}" readonly required>
+        <label for="amount" >Amount:</label>
+        <input type="number" id="amount" name="amount" value="{{ p.course_fee}}" readonly required="" class="form-control">
 
 
         <button type="submit">Pay</button>
@@ -77,3 +69,4 @@
 
 </body>
 </html>
+{% endblock %}

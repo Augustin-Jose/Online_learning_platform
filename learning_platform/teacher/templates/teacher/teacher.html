@@ -1,38 +1,84 @@
+{% extends 'temp/index2.html' %}
+{% block base %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Registration</title>
+    <style>
+       .teacher-registration-form {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+
+            text-align: center;
+        }
+
+
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: px;
+        }
+
+        input, select {
+            width:100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-	<form method="post">
-        {% csrf_token %}<center>
-		<h1>Teacher</h1>
-		<table>
-			<tr>
-				<td>Name</td>
-				<td><input type="text" name="name"></td>
-			</tr>
+    <form method="post" class="teacher-registration-form">
+        {% csrf_token %}
+        <h1>Teacher Registration</h1>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required="" class="form-control">
+        </div>
 
-				<tr>
-					<td>Password </td>
-				<td><input type="password" name="password"></td>
-			</tr>
-			<tr>
-				<td>Course</td>
-				<td><select name="qualification">
-					<option>select</option>
-					<option value="UG">UG</option>
-					<option value="PG">PG</option>
-				    </select></td></tr>
-				    <tr>
-				    	<td>Subject</td>
-				        </td><td><input type="text" name="subject" ></td>
-				    </tr>
-				</table>
-                <input type="submit" value="Register">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" required="" class="form-control">
+        </div>
 
-</center>
-	</form>
+        <div class="form-group" >
+            <label for="qualification">Qualification</label>
+            <select name="qualification" id="qualification" required="" class="form-control">
+                <option value="" disabled selected>Select</option>
+                <option value="UG">Undergraduate (UG)</option>
+                <option value="PG">Postgraduate (PG)</option>
+            </select>
+        </div>
 
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" id="subject" required="" class="form-control">
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
 </body>
 </html>
+{% endblock %}

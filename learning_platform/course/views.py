@@ -25,3 +25,45 @@ def view_course(request):
     }
     return render(request,'course/viewcourse.html',context)
 
+def webdevelopment(request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request,'course/webdevelopment.html',context)
+
+def python_fundamental(request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request,'course/python_fundamental.html',context)
+
+def java_programming_essentials(request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request,'course/java_programming_essentials.html',context)
+
+def machine_learning_basics(request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/machine_learning_basics.html', context)
+
+def frontend_development_with_react(request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/frontend_development_with_react.html', context)
+
+def cybersecurity_fundamentals  (request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/cybersecuurity_fundamental.html', context)
+

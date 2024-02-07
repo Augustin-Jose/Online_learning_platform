@@ -19,3 +19,5 @@ def view_class(request):
         'a':obj
     }
     return render(request,'tutorial/viewclass.html',context)
+
+

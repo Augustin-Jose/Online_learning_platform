@@ -1,3 +1,5 @@
+{% extends 'temp/admin2.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notification Form</title>
     <style>
-        body {
+        .a {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -21,6 +23,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70%
         }
 
         label {
@@ -53,23 +56,24 @@
         }
     </style>
 </head>
-<body>
-
+<body >
+<div class="a">
     <form method="post">
        {% csrf_token %}
         <label for="notification">Notification:</label>
-        <textarea  name="notification" rows="4" required></textarea>
+        <textarea  name="notification" rows="4" required="" class="form-control"></textarea>
 
         <label for="date">Date:</label>
-        <input type="date"  name="date" required>
+        <input type="date"  name="date" required="" class="form-control">
 
         <label for="time">Time:</label>
-        <input type="time"  name="time" required>
+        <input type="time"  name="time" required="" class="form-control">
 
         <button type="submit">OK</button>
     </form>
 
-    
 
+</div>
 </body>
 </html>
+{% endblock %}

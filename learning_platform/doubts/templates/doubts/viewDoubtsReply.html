@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 100px;
         }
         table, th, td {
             border: 1px solid black;
@@ -20,7 +22,7 @@
     </style>
 </head>
 <body>
-
+<br><br><br>
     <h2>Doubts and Replies</h2>
 
     <form action="process_doubts.php" method="post">
@@ -44,3 +46,5 @@
 
 </body>
 </html>
+
+{% endblock %}

@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,18 +11,19 @@
         {% csrf_token %}<table>
 		<tr>
 			<td>Subject</td>
-		<td><input type="text" name="subject"></td>
+		<td><input type="text" name="subject" required="" class="form-control"></td>
 		</tr>
 		<tr>
 			<td>Tutorials</td>
-		<td><input type="file" name="video"></td>
+		<td><input type="file" name="video" required="" class="form-control"></td>
 		</tr>
 		<tr>
 			<td>Notes</td>
-		<td><input type="file" name="notes"></td>
+		<td><input type="file" name="notes" required="" class="form-control"></td>
 		</tr></table>
 		<input type="submit" value="Ok"></center>
 	</form>
 
 </body>
 </html>
+{% endblock %}

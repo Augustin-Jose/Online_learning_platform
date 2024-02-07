@@ -1,3 +1,5 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,15 +13,15 @@
 		<table>
 
 		<tr><td>Course</td>
-		<td><input type="text" name="course"> </td></tr>
+		<td><input type="text" name="course" required="" class="form-control"> </td></tr>
 
             <tr><td>Teacher_name</td>
-		<td><input type="text" name="teacher_id"> </td></tr>
+		<td><input type="text" name="teacher_id" required="" class="form-control"> </td></tr>
              <tr><td>Student_name</td>
-		<td><input type="text" name="student_id"> </td></tr>
+		<td><input type="text" name="student_id" required="" class="form-control"> </td></tr>
 
 		<tr><td>Task Progress</td>
-		<td><input type="text" name="progress"></td></tr>
+		<td><input type="text" name="progress" required="" class="form-control"></td></tr>
 		
 		</table><br>
 		<input type="submit" value="Submit">
@@ -27,3 +29,4 @@
 	</form>
 </body>
 </html>
+{% endblock %}
