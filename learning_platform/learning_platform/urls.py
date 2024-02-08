@@ -32,4 +32,5 @@ urlpatterns = [
     url('temp/', include('temp.url')),
     url('$',views.index),
 
+
 ]

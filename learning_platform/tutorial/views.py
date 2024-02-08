@@ -1,15 +1,27 @@
+from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from tutorial.models import Tutorial
 
 
 
 def classes(request):
+    ss= request.session["u_id"]
     if request.method == 'POST':
         obj = Tutorial()
-        obj.video = request.POST.get('video')
-        obj.notes = request.POST.get('notes')
+        # obj.video = request.POST.get('video')
+        myfile=request.FILES['video']
+        fs=FileSystemStorage()
+        filename=fs.save(myfile.name,myfile)
+        obj.video = myfile.name
+
+        # obj.notes = request.POST.get('notes')
+        myfile = request.FILES['notes']
+        fs = FileSystemStorage()
+        filename = fs.save(myfile.name, myfile)
+        obj.notes = myfile.name
+
         obj.subject= request.POST.get('subject')
-        obj.teacher_id = 1
+        obj.teacher_id = ss
         obj.save()
     return render(request, 'tutorial/classes.html')
 

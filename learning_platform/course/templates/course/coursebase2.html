@@ -1,23 +1,7 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
--->
 <!doctype html>
 <html lang="en">
 
 <head>
-    <style>
-  body.blur {
-    filter: blur(5px);
-    pointer-events: none;
-}
-
-.exclude-blur {
-    filter: none;
-    pointer-events: auto;
-}
-
-    </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,6 +12,8 @@ Author URL: http://w3layouts.com
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="/static/assets/css/style-starter.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 
 <body>
@@ -53,31 +39,30 @@ Author URL: http://w3layouts.com
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ml-lg-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/temp/index/">Home<span class="sr-only">(current)</span></a>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/temp/teacher_home/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/temp/about/">About Us</a>
+                            <a class="nav-link" href="/temp/about3/">About Us</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="/temp/courses/">Courses</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/temp/contact/">Contact Us</a>
-                        </li>
-                         <li class="nav-item">
-                            <div class="dropdown" >
-                                <a class="nav-link">  <span id="">Register</span></a>
+                            <div class="dropdown">
+                                <a class="nav-link">  <span id="man">Explore</span></a>
                                 <div class="dropdown-content" id="myDropdown">
-                                  <a href="/student/student/">I am a Student</a>
-                                  <a href="/teacher/teacher/">I am a Teacher</a>
+                                  <a href="/progress/progress/">Report Progress</a>
+                                  <a href="/doubts/doubt_post/">View Doubts</a>
+                                         <a href="">Reply Queries</a>
 
                                 </div>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/temp/contact3/">Contact Us</a>
+                        </li>
                         <!-- search button -->
                         <div class="search-right">
-                            <a href="/temp/index/" class="btn button-style" title="search">Back</a>
+                            <a href="/temp/index/" class="btn button-style bg-danger" title="search">Log out</a>
                             <!-- search popup -->
                             <!-- <div id="search" class="pop-overlay">
                                 <div class="popup">
@@ -119,40 +104,14 @@ Author URL: http://w3layouts.com
         </div>
     </header>
     <!--//header-->
-    <!-- banner section -->
-    <section id="home" class="w3l-banner py-5">
-        <div class="container pt-5 pb-md-4">
-
-
-                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-                    </div>
-                </div>
-        {% block base %}
-             <div class="exclude-blur">
-        <!-- Content of the section you want to exclude from blur -->
-        <!-- ... -->
-    </div>
+    <br><br>
+{% block base %}
     {% endblock %}
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <div class="col-md-6 banner-right mt-md-0 mt-4">
-                    <img class="img-fluid" src="/static/assets/images/b1.png" alt=" ">
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- footer -->
     <footer class="w3l-footer-22 position-relative mt-5 pt-5">
         <div class="footer-sub">
             <div class="container">
                 <div class="text-txt">
-                    <div class="right-side text-center">
-                        <h4> Join our best popular online courses</h4>
-                        <a class="btn button-style mt-4" href="courses.html">Explore<i
-                                class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
                     <div class="row sub-columns">
                         <div class="col-lg-4 col-md-6 col-sm-8 sub-one-left">
                             <h6>About </h6>
@@ -176,7 +135,7 @@ Author URL: http://w3layouts.com
                         <div class="col-lg-2 col-md-6 col-sm-4 mt-sm-0 mt-5 sub-two-right">
                             <h6>Quick links</h6>
                             <ul>
-                                <li><a href="index.html"><span class="fa fa-angle-double-right mr-2"></span>Home</a>
+                                <li><a href=""><span class="fa fa-angle-double-right mr-2"></span>Home</a>
                                 </li>
                                 <li><a href="about.html"><span class="fa fa-angle-double-right mr-2"></span>About</a>
                                 </li>
@@ -203,14 +162,14 @@ Author URL: http://w3layouts.com
                             <h6>Contact </h6>
                             <div class="column2">
                                 <div class="href1"><span class="fa fa-envelope-o" aria-hidden="true"></span><a
-                                        href="mailto:info@example.com">edufy@gmail.com</a>
+                                        href="mailto:info@example.com">eddfy@example.com</a>
                                 </div>
                                 <div class="href2"><span class="fa fa-phone" aria-hidden="true"></span><a
-                                        href="tel:+44-000-888-999">+91 9700939393</a>
+                                        href="tel:+44-000-888-999">+91 8238952323</a>
                                 </div>
                                 <div>
                                     <p class="contact-para"><span class="fa fa-map-marker"
-                                            aria-hidden="true"></span>Calicut ,Kerala, India</p>
+                                            aria-hidden="true"></span>Calicut, Kerala , India</p>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +181,7 @@ Author URL: http://w3layouts.com
         <div class="copyright-footer text-center">
             <div class="container">
                 <div class="columns">
-                    <p>Edufy Online Study. All rights reserved.
+                    <p>@Edufy Online Study. All rights reserved.
                     </p>
                 </div>
             </div>
@@ -259,7 +218,7 @@ Author URL: http://w3layouts.com
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="/static/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
@@ -287,9 +246,9 @@ Author URL: http://w3layouts.com
                             newString += char;
                             thhis.text(newString);
                         }, i * typingSpeed);
-                    })(i +1, text[i]);
+                    })(i + 1, text[i]);
                 }
-            }, 900);
+            }, 1500);
         }
 
         $(document).ready(function () {
@@ -411,16 +370,6 @@ Author URL: http://w3layouts.com
     <script src="/static/assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
-<script>
-function blurPage() {
-    document.body.classList.add("blur");
-}
-
-function unblurPage() {
-    document.body.classList.remove("blur");
-}
-
-</script>
 </body>
 
 </html>

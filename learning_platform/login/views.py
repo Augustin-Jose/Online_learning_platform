@@ -20,15 +20,15 @@ def login(request):
                 return HttpResponseRedirect('/temp/admin/')
             elif tp == "student":
                 request.session["u_id"] = uid
-                return HttpResponseRedirect('/temp/student/')
+                return HttpResponseRedirect('/temp/student_home/')
             elif tp == "teacher":
                 request.session["u_id"] = uid
-                return HttpResponseRedirect('/temp/teacher/')
-            else:
-                objlist = "username or password incorrect....please try again....!"
-                context = {
-                    'msg': objlist,
-                }
+                return HttpResponseRedirect('/temp/teacher_home/')
+        else:
+            objlist = "username or password incorrect"
+            context = {
+                'x': objlist,
+            }
             return render(request, 'login/login.html', context)
 
     return render(request, 'login/login.html')

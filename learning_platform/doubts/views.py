@@ -2,9 +2,11 @@ from django.shortcuts import render
 from doubts.models import Doubts
 import datetime
 def doubts(request):
+    ss=request.session["u_id"]
     if request.method == 'POST':
         obj = Doubts()
         obj.doubt = request.POST.get('doubt')
+        obj.student_id=ss
         obj.reply = 'pending'
         obj.date = datetime.datetime.today()
         obj.time = datetime.datetime.now()
@@ -28,7 +30,8 @@ def view_doubt_post_reply(request):
     return render(request, 'doubts/view_doubt_post_reply.html',context)
 
 def view_doubt_reply(request):
-    obj=Doubts.objects.all()
+    ss=request.session["u_id"]
+    obj=Doubts.objects.filter(student_id=ss)
     context={
         'b':obj
     }

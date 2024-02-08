@@ -20,5 +20,6 @@ urlpatterns = [
     url('frontend_development_with_react/', views.frontend_development_with_react),
 
     url('cybersecurity_fundamentals/', views.cybersecurity_fundamentals),
+    url('Free_courses/', views.Free_courses),
 
 ]

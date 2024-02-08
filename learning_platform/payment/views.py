@@ -5,15 +5,15 @@ import datetime
 def pay(request,idd):
 
     if request.method == 'POST':
+        ss=request.session["u_id"]
         obj = Payment()
-
         obj.payment_method = request.POST.get('payment_method')
         obj.amount = request.POST.get('amount')
         obj.status = 'pending'
         obj.date = datetime.datetime.today()
         obj.time = datetime.datetime.now()
-        obj.course_id=1
-        obj.student=1
+        obj.course_id=idd
+        obj.student=ss
         obj.save()
     obj1 = Course.objects.get(course_id=idd)
     context = {

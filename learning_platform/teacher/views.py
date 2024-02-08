@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from login.models import Login
 from teacher.models import Teacher
 
 
@@ -30,6 +32,12 @@ def approve(request, idd):
     obj = Teacher.objects.get(teacher_id=idd)
     obj.status = 'approve'
     obj.save()
+    ob = Login()
+    ob.username = obj.name
+    ob.password = obj.password
+    ob.type = 'teacher'
+    ob.u_id = obj.teacher_id
+    ob.save()
     return adm_man_teacher(request)
 
 def reject(request, idd):

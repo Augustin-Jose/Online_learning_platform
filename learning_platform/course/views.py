@@ -67,3 +67,9 @@ def cybersecurity_fundamentals  (request):
     }
     return render(request, 'course/cybersecuurity_fundamental.html', context)
 
+def Free_courses  (request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/Free_courses.html', context)

@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from student.models import  Student
+
+from login.models import Login
+from student.models import Student
 
 
 def student(request):
@@ -8,10 +10,17 @@ def student(request):
         obj.name = request.POST.get('name')
         obj.password = request.POST.get('password')
         obj.age = request.POST.get('age')
-        obj.gender= request.POST.get('gender')
-        obj.address = request.POST.get('address')
+        obj.gender = request.POST.get('gender')
+        obj.email = request.POST.get('email')
         obj.status='pending'
         obj.save()
+        ob=Login()
+        ob.username=obj.name
+        ob.password=obj.password
+        ob.type = 'student'
+        ob.u_id=obj.student_id
+        ob.save()
+
     return render(request,'student/student.html')
 
 def student_edit(request,idd):
@@ -24,10 +33,13 @@ def student_edit(request,idd):
         obj.name = request.POST.get('name')
         obj.password = request.POST.get('password')
         obj.age = request.POST.get('age')
-        obj.gender = request.POST.get('gender')
-        obj.address = request.POST.get('address')
+        obj.email = request.POST.get('email')
         obj.status = 'pending'
         obj.save()
+        ob=Login.objects.get(u_id=request.session["u_id"],type='student')
+        ob.password=obj.password
+        ob.username=obj.name
+        ob.save()
         return admin_man_user(request)
     return render(request, 'student/studentedit.html',context)
 
@@ -52,3 +64,10 @@ def delete(request,idd):
     obj.status = 'deleted'
     obj.delete()
     return admin_man_user(request)
+
+def ad_v_stud(request):
+    obj = Student.objects.all()
+    context = {
+        'a': obj
+    }
+    return render(request, 'student/ad_v_stud.html',context)

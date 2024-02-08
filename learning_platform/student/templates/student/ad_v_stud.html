@@ -1,11 +1,11 @@
-{% extends 'course/course_base.html' %}
+{% extends 'temp/admin2.html' %}
 {% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Classes</title>
+    <title>Admin Manage Users</title>
     <style>
         table {
             width: 100%;
@@ -19,29 +19,42 @@
             padding: 10px;
             text-align: left;
         }
+        button {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
-    <h2>View Classes</h2>
+    <h2 align="center">Admin Manage Users</h2>
+
+    <form  method="post">
+    <br>
+
+{% csrf_token %}
+
+    <h2 align="center">User Details</h2>
 
     <table>
         <tr>
-            <th>Subject</th>
-            <th>Video</th>
-            <th>notes</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>Gender</th>
+            <th>Age</th>
+
+
         </tr>{% for i in a %}
         <tr>
-            <td>{{ i.subject }}</td>
-            <td><a href="/static/{{ i.video }}">
-                <video controls="controls" width="25%;" height="25%;">
-                    <source src="/static/{{ i.video }}" type="video/mp4">
-                </video>
-             </a></td>
-            <td><a href="/static/{{ i.notes}}">{{ i.notes}}</a></td>
-        </tr>{% endfor %}
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.gender }}</td>
+            <td>{{ i.age }}</td>
+
+             </tr>{% endfor %}
         <!-- Add more rows as needed -->
     </table>
+
+       </form>
 
 </body>
 </html>
