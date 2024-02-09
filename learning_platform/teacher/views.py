@@ -30,7 +30,7 @@ def adm_man_teacher(request):
 
 def approve(request, idd):
     obj = Teacher.objects.get(teacher_id=idd)
-    obj.status = 'approve'
+    obj.status = 'approved'
     obj.save()
     ob = Login()
     ob.username = obj.name
@@ -42,6 +42,8 @@ def approve(request, idd):
 
 def reject(request, idd):
     obj = Teacher.objects.get(teacher_id=idd)
-    obj.status = 'reject'
+    obj.status = 'rejected'
     obj.save()
+    obb=Login.objects.get(u_id=idd, type='teacher')
+    obb.delete()
     return adm_man_teacher(request)

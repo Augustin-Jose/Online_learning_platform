@@ -45,7 +45,8 @@ def student_edit(request,idd):
 
 
 def admin_man_user(request):
-    obj = Student.objects.all()
+    ss= request.session["u_id"]
+    obj = Student.objects.filter(student_id=ss)
     context = {
         'a': obj
     }

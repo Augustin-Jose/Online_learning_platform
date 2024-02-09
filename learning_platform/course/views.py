@@ -14,7 +14,7 @@ def course(request):
 def course_pay(request):
     obj=Course.objects.all()
     context={
-        'a':obj
+        'c':obj
     }
     return render(request,'course/view_course_pay.html',context)
 
@@ -73,3 +73,10 @@ def Free_courses  (request):
         'b':obj
     }
     return render(request, 'course/Free_courses.html', context)
+
+def sql  (request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/sql.html', context)

@@ -1,0 +1,73 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Learning Platform</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">WebDev Platform</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/progress/view/">Progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubts/">Doubts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubt_reply/">View Reply</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<div class="container mt-4" id="content">
+    <h2>SQL Fundamentals</h2><br>
+    <p>
+        SQL (Structured Query Language) is a powerful language for managing and manipulating relational databases. It serves as a standard for interacting with databases, allowing developers to perform tasks such as querying data, inserting records, updating information, and more.
+
+        Key SQL concepts include:
+
+        <ul>
+            <li><strong>SELECT:</strong> Retrieve data from one or more tables.</li>
+            <li><strong>INSERT:</strong> Add new records to a table.</li>
+            <li><strong>UPDATE:</strong> Modify existing records in a table.</li>
+            <li><strong>DELETE:</strong> Remove records from a table.</li>
+            <li><strong>WHERE clause:</strong> Filter data based on specified conditions.</li>
+            <li><strong>JOIN:</strong> Combine rows from two or more tables based on related columns.</li>
+            <li><strong>INDEX:</strong> Improve query performance by creating indexes on columns.</li>
+        </ul>
+
+        Understanding SQL is essential for building applications that interact with databases. It empowers developers to create efficient and optimized database queries, ensuring smooth data retrieval and manipulation.
+    </p>
+    <!-- Additional SQL content goes here -->
+</div>
+
+<!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript code goes here (if needed) -->
+
+</body>
+</html>
+{% endblock %}

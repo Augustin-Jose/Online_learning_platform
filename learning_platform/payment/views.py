@@ -13,7 +13,7 @@ def pay(request,idd):
         obj.date = datetime.datetime.today()
         obj.time = datetime.datetime.now()
         obj.course_id=idd
-        obj.student=ss
+        obj.student_id=ss
         obj.save()
     obj1 = Course.objects.get(course_id=idd)
     context = {
