@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Online_learning_platform.iml" filepath="$PROJECT_DIR$/.idea/Online_learning_platform.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/learning_platform.iml" filepath="$PROJECT_DIR$/.idea/learning_platform.iml" />
+>>>>>>> master
     </modules>
   </component>
 </project>

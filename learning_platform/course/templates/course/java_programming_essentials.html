@@ -1,0 +1,64 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Learning Platform</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">WebDev Platform</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/progress/view/">Progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubts/">Doubts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubt_reply/">View Reply</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<div class="container mt-4" id="content">
+    <h2>Java Programming</h2><br>
+    <p>
+Java programming essentials using Django involves integrating the powerful and versatile Java programming language with the Django web framework, typically known for its association with Python. By leveraging Jython, which allows the seamless integration of Java and Python, developers can harness the strengths of both languages in a Django environment.
+
+Java, renowned for its portability and scalability, brings robustness to Django applications. It extends the capabilities of Django by integrating Java libraries and leveraging the Java Virtual Machine (JVM). This combination facilitates the development of high-performance and enterprise-level web applications.
+
+Incorporating Java servlets within Django projects enables efficient handling of HTTP requests and responses, enhancing the overall web application architecture. Developers can utilize Java's extensive ecosystem of libraries and frameworks alongside Django's model-view-controller (MVC) architecture, providing a well-structured and modular approach to application development.
+
+Java programming essentials in a Django context include understanding how to seamlessly connect Java components with Django models, views, and templates. This integration broadens the scope of Django applications, allowing developers to tap into the extensive Java ecosystem while benefiting from Django's rapid development features. It's a fusion that brings together the strengths of both worlds, providing a robust and scalable solution for complex web development projects. </p><!-- Your web development content goes here -->
+</div>
+
+
+<!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript code goes here (if needed) -->
+
+</body>
+</html>
+{% endblock %}

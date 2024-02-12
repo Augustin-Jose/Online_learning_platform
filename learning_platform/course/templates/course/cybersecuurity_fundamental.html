@@ -1,0 +1,72 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Learning Platform</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">WebDev Platform</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/progress/view/">Progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubts/">Doubts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubt_reply/">View Reply</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<div class="container mt-4" id="content">
+    <h2>Cybersecurity Fundamentals</h2><br>
+    <p>
+Integrating cybersecurity fundamentals with Django establishes a secure foundation for web applications. Django, known for its robust security features, becomes a crucial ally in safeguarding against common cyber threats. Developers can implement secure coding practices, leverage Django's built-in protection mechanisms, and adhere to industry standards for authentication and authorization.
+
+Key cybersecurity aspects include protecting against SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF). Django's Object-Relational Mapping (ORM) system inherently defends against SQL injection by parameterizing queries. The framework's template system also mitigates XSS vulnerabilities by automatically escaping content.
+
+In terms of user authentication, Django offers a comprehensive system with features like password hashing and session management, reinforcing defense against unauthorized access. Implementing HTTPS ensures secure communication, preventing eavesdropping and data tampering.
+
+Django's security middleware provides protection against common attacks, such as clickjacking, while its built-in decorators secure views with granular access controls. Additionally, developers can integrate third-party packages for advanced security measures like Two-Factor Authentication (2FA) and rate limiting.
+
+By combining cybersecurity fundamentals with Django, developers create web applications that prioritize user data integrity, confidentiality, and availability. This integration not only fortifies against potential cyber threats but also aligns with best practices, ensuring a resilient and secure foundation for modern web development.
+
+
+
+
+
+</p><!-- Your web development content goes here -->
+</div>
+
+
+<!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript code goes here (if needed) -->
+
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'course/coursebase2.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Class</h1>
+	<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}<table>
+		<tr>
+			<td>Subject</td>
+		<td><input type="text" name="subject" required="" class="form-control"></td>
+		</tr>
+		<tr>
+			<td>Tutorials</td>
+		<td><input type="file" name="video" required="" class="form-control"></td>
+		</tr>
+		<tr>
+			<td>Notes</td>
+		<td><input type="file" name="notes" required="" class="form-control"></td>
+		</tr></table>
+		<input type="submit" value="Ok">
+	</form>
+
+</body>
+</html>
+{% endblock %}

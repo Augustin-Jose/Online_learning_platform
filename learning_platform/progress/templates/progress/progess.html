@@ -1,0 +1,97 @@
+{% extends 'course/coursebase2.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f50057;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #f50057;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <center>
+            <h1>Progress</h1>
+            <table>
+                <tr>
+                    <td>Course</td>
+                    <td>
+                        <select name="course" class="form-control">
+                            <option>---Select----</option>
+                            {% for i in x %}
+                            <option value="{{ i.course_id }}">{{ i.course }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Student Name</td>
+                    <td>
+                        <select name="student" class="form-control">
+                            <option>--------Select--------</option>
+                            {% for i in y %}
+                            <option value="{{ i.student_id }}">{{ i.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Task Progress</td>
+                    <td><input type="text" name="progress" required class="form-control"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Submit">
+        </center>
+    </form>
+</body>
+</html>
+{% endblock %}

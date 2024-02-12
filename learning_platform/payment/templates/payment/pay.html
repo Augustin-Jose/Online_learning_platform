@@ -1,0 +1,87 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        form {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            margin-left: 500px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" onsubmit="showSuccessAlert()">
+        {% csrf_token %}
+
+        <label for="paymentMode">Payment Method</label>
+        <select id="paymentMode" name="payment_method" required="">
+            <option value="qrCode">QR Code</option>
+            <option value="upi">UPI</option>
+            <option value="card">Card</option>
+            <option value="InternetB">Internet Banking</option>
+        </select>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" value="{{ p.course_fee }}" readonly required="">
+
+        <button type="submit">Pay</button>
+    </form>
+
+    <script>
+        function showSuccessAlert() {
+            alert("Payment Successful!");
+            // Redirect to the "/course/sql" page after clicking "OK"
+            window.location.href="/course/sql/"
+
+        }
+    </script>
+
+</body>
+
+</html>
+{% endblock %}

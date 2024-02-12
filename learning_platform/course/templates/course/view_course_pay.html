@@ -1,0 +1,86 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Courses and Pay</title>
+    <style>
+        {#body {#}
+        {#    font-family: 'Arial', sans-serif;#}
+        {#    background-color: #f4f4f4;#}
+        {#    margin: 0;#}
+        {#    display: flex;#}
+        {#    align-items: center;#}
+        {#    justify-content: center;#}
+        {#    height: 100vh;#}
+        {#}#}
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        c {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            background-color: #45a049;
+            color: white;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        c:hover {
+            background-color: #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>View Courses and Pay</h2>
+
+    <table>
+        <tr>
+            <th>Course Name</th>
+            <th>Duration</th>
+            <th>Fee</th>
+            <th>Action</th>
+        </tr>
+        {% for i in c %}
+        <tr>
+            <td>{{ i.course }}</td>
+            <td>{{ i.duration }}</td>
+            <td>{{ i.course_fee }}</td>
+            <td><a href="/payment/pay/{{ i.course_id }}">Pay Now</a></td>
+        </tr>
+        {% endfor %}
+        <!-- Add more rows as needed -->
+    </table>
+
+</body>
+
+</html>
+{% endblock %}
