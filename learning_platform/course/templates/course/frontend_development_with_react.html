@@ -1,0 +1,65 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Learning Platform</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 60px; /* Adjust for fixed navbar */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">WebDev Platform</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" href="/progress/view/">Progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubts/">Doubts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/doubts/doubt_reply/">View Reply</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Content Section -->
+<div class="container mt-4" id="content">
+    <h2>Frontend Development with  React </h2><br>
+    <p>
+Machine learning basics using Django involves integrating the popular Django web framework with machine learning functionalities to create intelligent and data-driven web applications. Django simplifies the development process, providing a structured environment for building web applications, while machine learning empowers these applications to make predictions and decisions based on data.
+
+In this context, developers can employ Django to handle user interfaces, manage databases, and control the overall application flow. Integrating machine learning models into Django allows for predictive analysis, recommendation systems, and data-driven insights. Django's Model-View-Controller (MVC) architecture complements the machine learning workflow, enabling seamless incorporation of predictive models into web applications.
+
+Django's flexibility makes it conducive to handling data preprocessing, model training, and serving predictions. Developers can utilize machine learning libraries like scikit-learn or TensorFlow to implement regression, classification, or clustering algorithms within Django projects.
+
+The combined approach of Django and machine learning facilitates the creation of intelligent web applications that adapt and learn from user interactions, enhancing user experiences and providing personalized content. This integration empowers developers to explore innovative ways to leverage data for predictive analytics while maintaining the structure and efficiency offered by the Django framework.</p>
+    <!-- Your web development content goes here -->
+</div>
+
+
+<!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript code goes here (if needed) -->
+
+</body>
+</html>
+{% endblock %}
