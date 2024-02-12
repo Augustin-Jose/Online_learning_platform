@@ -3,29 +3,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title>Ask Your Doubts</title>
+    <style>
+
+        form {
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: auto; /* Center the form horizontally */
+        }
+
+        h1 {
+            text-align: center;
+            color: #f50057;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="date"],
+        input[type="time"] {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #f50057;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d50000;
+        }
+    </style>
 </head>
 <body>
-	<form method="post">
+<br><br>
+    <form method="post" ><center>
         {% csrf_token %}
-	<center>
-	<h1>Doubts</h1>
-        <br><br>
-		<table><tr>
-			
-			<tr><td>Doubts</td>
-			<td><textarea name="doubt" placeholder="Ask your Doubts" required="" class="form-control"></textarea></td>
-		</tr><tr>
-<label for="date">Date:</label>
-        <input type="date"  name="date" required="" class="form-control">
-
-        <label for="time">Time:</label>
-        <input type="time"  name="time"  step="300" required="" class="form-control">
-		</table><br>
-		<input type="submit" value="OK">
-    </center></tr>
-	</form>
-
+        <h1>Ask Your Doubts</h1>
+        <table>
+            <tr>
+                <td>Doubts</td>
+                <td><textarea name="doubt" placeholder="Ask your Doubts" required=""></textarea></td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date" name="date" required=""></td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td><input type="time" name="time"></td>
+            </tr>
+        </table>
+        <br>
+        <div style="text-align: center;">
+            <input type="submit" value="OK">
+        </div>
+    </form>
+</center>
 </body>
 </html>
 {% endblock %}

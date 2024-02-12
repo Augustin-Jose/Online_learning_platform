@@ -1,11 +1,11 @@
-{% extends 'course/course_base.html' %}
+{% extends 'course/coursebase2.html' %}
 {% block base %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
-<body><center>
+<body>
 	<h1>Class</h1>
 	<form method="post" enctype="multipart/form-data">
         {% csrf_token %}<table>
@@ -21,7 +21,7 @@
 			<td>Notes</td>
 		<td><input type="file" name="notes" required="" class="form-control"></td>
 		</tr></table>
-		<input type="submit" value="Ok"></center>
+		<input type="submit" value="Ok">
 	</form>
 
 </body>
