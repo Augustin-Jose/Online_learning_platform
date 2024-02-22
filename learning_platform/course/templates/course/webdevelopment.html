@@ -5,12 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebDev Learning Platform</title>
+    <title>Edufy Learning Platform</title>
     <!-- Link to Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             padding-top: 60px; /* Adjust for fixed navbar */
+        }
+
+        /* Update navbar styles */
+        .navbar {
+            background-color: #f50057;
+        }
+
+        .navbar-brand, .nav-link {
+            color: white;
+        }
+
+        /* Update button styles */
+        .btn {
+            background-color: #f50057;
+            color: white;
         }
     </style>
 </head>
@@ -24,7 +39,6 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-
             <li class="nav-item">
                 <a class="nav-link" href="/progress/view/">Progress</a>
             </li>
@@ -43,14 +57,14 @@
     <h2>Web Development </h2><br>
     <p>Web development using Django offers a robust and efficient framework for building dynamic web applications with Python. Leveraging the Model-View-Controller (MVC) architectural pattern, Django simplifies the development process by providing a high-level, batteries-included environment. Developers can focus on creating feature-rich applications without dealing with low-level details.
 
-Django's Object-Relational Mapping (ORM) system facilitates database interactions, enabling seamless integration with databases like MySQL. The framework's built-in authentication, security, and URL routing streamline common tasks. Templates, powered by Django's template engine, allow for the creation of dynamic and reusable HTML content.
+    Django's Object-Relational Mapping (ORM) system facilitates database interactions, enabling seamless integration with databases like MySQL. The framework's built-in authentication, security, and URL routing streamline common tasks. Templates, powered by Django's template engine, allow for the creation of dynamic and reusable HTML content.
 
-Furthermore, Django encourages the DRY (Don't Repeat Yourself) principle, enhancing code maintainability. Its admin interface automates administrative tasks, reducing the effort required for backend management.
+    Furthermore, Django encourages the DRY (Don't Repeat Yourself) principle, enhancing code maintainability. Its admin interface automates administrative tasks, reducing the effort required for backend management.
 
-In the realm of online learning platforms, Django facilitates content management, user authentication, and data organization. Leveraging its versatility, developers can create engaging platforms with interactive features. As a result, Django stands as a powerful choice for web development, fostering rapid and scalable solutions for a variety of applications, including online learning.</p>
+    In the realm of online learning platforms, Django facilitates content management, user authentication, and data organization. Leveraging its versatility, developers can create engaging platforms with interactive features. As a result, Django stands as a powerful choice for web development, fostering rapid and scalable solutions for a variety of applications, including online learning.
+    </p>
     <!-- Your web development content goes here -->
 </div>
-
 
 <!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -61,6 +75,5 @@ In the realm of online learning platforms, Django facilitates content management
 
 </body>
 </html>
-
 
 {% endblock %}

@@ -1,28 +1,87 @@
 {% extends 'course/coursebase2.html' %}
 {% block base %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Class</title>
+    <style>
+
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        tr, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="url"],
+        input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-	<h1>Class</h1>
-	<form method="post" enctype="multipart/form-data">
-        {% csrf_token %}<table>
-		<tr>
-			<td>Subject</td>
-		<td><input type="text" name="subject" required="" class="form-control"></td>
-		</tr>
-		<tr>
-			<td>Tutorials</td>
-		<td><input type="file" name="video" required="" class="form-control"></td>
-		</tr>
-		<tr>
-			<td>Notes</td>
-		<td><input type="file" name="notes" required="" class="form-control"></td>
-		</tr></table>
-		<input type="submit" value="Ok">
-	</form>
+ <br><br>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <h1>Create Class</h1>
+        <table>
+            <tr>
+                <td>Subject</td>
+                <td><input type="text" name="subject" required="" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Tutorials</td>
+                <td><input type="url" name="video" required="" class="form-control"></td>
+            </tr>
+            <tr>
+                <td>Notes</td>
+                <td><input type="file" name="notes" required="" class="form-control"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Create Class">
+    </form>
 
 </body>
 </html>
