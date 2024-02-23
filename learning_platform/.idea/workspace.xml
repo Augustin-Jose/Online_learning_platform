@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6b7b8fa4-6773-4507-a7ee-0c6355e081db" name="learning_platform.https://github.com/Augustin-Jose/Online_learning_platform.git" comment="completed development.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course/templates/course/webdevelopment.html" beforeDir="false" afterPath="$PROJECT_DIR$/course/templates/course/webdevelopment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/learning_platform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/learning_platform/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial/templates/tutorial/classes.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial/templates/tutorial/classes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial/templates/tutorial/viewclass.html" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial/templates/tutorial/viewclass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tutorial/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/tutorial/views.py" afterDir="false" />
+    <list default="true" id="6b7b8fa4-6773-4507-a7ee-0c6355e081db" name="learning_platform.https://github.com/Augustin-Jose/Online_learning_platform.git" comment="changing progress">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
     </list>
     <list id="61c3551f-c597-45ea-a484-de8f70cb76bc" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,8 +34,8 @@
       <file leaf-file-name="viewclass.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tutorial/templates/tutorial/viewclass.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+            <state relative-caret-position="1411">
+              <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -58,8 +52,8 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login/templates/login/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="76" column="52" lean-forward="true" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
+            <state relative-caret-position="1292">
+              <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -67,8 +61,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+            <state relative-caret-position="34">
+              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -100,20 +94,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learning_platform/settings.py">
+      <file leaf-file-name="webdevelopment.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/course/templates/course/webdevelopment.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2329">
-              <caret line="137" selection-start-line="137" selection-end-line="137" selection-end-column="42" />
+            <state relative-caret-position="1173">
+              <caret line="69" column="51" lean-forward="true" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webdevelopment.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/course/templates/course/webdevelopment.html">
+      <file leaf-file-name="student.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/student/templates/student/student.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+            <state relative-caret-position="255">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datadump.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/datadump.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret column="3219" selection-start-column="3219" selection-end-column="3219" />
             </state>
           </provider>
         </entry>
@@ -153,6 +156,8 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
@@ -162,7 +167,6 @@
         <option value="$PROJECT_DIR$/doubts/models.py" />
         <option value="$PROJECT_DIR$/doubts/views.py" />
         <option value="$PROJECT_DIR$/progress/views.py" />
-        <option value="$PROJECT_DIR$/student/templates/student/student.html" />
         <option value="$PROJECT_DIR$/temp/templates/temp/Free Courses.html" />
         <option value="$PROJECT_DIR$/temp/templates/temp/Free_courses.html" />
         <option value="$PROJECT_DIR$/course/templates/course/Free_courses.html" />
@@ -209,6 +213,7 @@
         <option value="$PROJECT_DIR$/login/templates/login/login.html" />
         <option value="$PROJECT_DIR$/login/views.py" />
         <option value="$PROJECT_DIR$/course/templates/course/webdevelopment.html" />
+        <option value="$PROJECT_DIR$/student/templates/student/student.html" />
       </list>
     </option>
   </component>
@@ -222,9 +227,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1028" />
+    <option name="x" value="951" />
+    <option name="width" value="978" />
+    <option name="height" value="1029" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -244,38 +249,20 @@
             <path>
               <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
               <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="course" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="learning_platform" type="b2602c69:ProjectViewProjectNode" />
-              <item name="learning_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="student" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -288,9 +275,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../manas/project23" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -326,7 +313,7 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="learning_platform.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Lenovo\AppData\Local\Programs\Python\Python37\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\alvin\AppData\Local\Programs\Python\Python37\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -405,20 +392,28 @@
       <option name="project" value="LOCAL" />
       <updated>1707750875566</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="reworking">
+      <created>1708609638457</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708609638457</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="830" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="687" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50067115" side_tool="true" weight="0.3299712" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.111631535" side_tool="true" visible="true" weight="0.271777" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299712" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.3299712" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2723343" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49932885" visible="true" weight="0.30259365" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.12818792" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8883685" weight="0.271777" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4980484" weight="0.047038328" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.12802498" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.3295302" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3295302" />
@@ -453,7 +448,9 @@
     <MESSAGE value="added sessions&#10;added video controls &#10;changed courses method" />
     <MESSAGE value="change design&#10;added payment" />
     <MESSAGE value="completed development." />
-    <option name="LAST_COMMIT_MESSAGE" value="completed development." />
+    <MESSAGE value="reworking" />
+    <MESSAGE value="changing progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing progress" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -462,13 +459,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/course/templates/course/course.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/payment/templates/payment/paymentDetails.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -483,13 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/templates/student/student.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="74" column="37" lean-forward="true" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -777,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tutorial/templates/tutorial/viewclass.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="83" column="26" lean-forward="true" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        <state relative-caret-position="1411">
+          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -789,34 +772,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/login/forms.py" />
     <entry file="file://$PROJECT_DIR$/login/templates/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="76" column="52" lean-forward="true" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
+        <state relative-caret-position="1292">
+          <caret line="76" column="52" selection-start-line="76" selection-start-column="52" selection-end-line="76" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="34">
+          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/datadump.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret column="3219" selection-start-column="3219" selection-end-column="3219" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/course/templates/course/webdevelopment.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="57" column="60" lean-forward="true" selection-start-line="57" selection-start-column="60" selection-end-line="57" selection-end-column="60" />
+        <state relative-caret-position="1173">
+          <caret line="69" column="51" lean-forward="true" selection-start-line="69" selection-start-column="51" selection-end-line="69" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/templates/student/student.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
         </state>
       </provider>
     </entry>
