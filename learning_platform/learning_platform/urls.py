@@ -35,6 +35,7 @@ urlpatterns = [
     url('$',views.index),
 
 
+
 ]
 
 if settings.DEBUG:

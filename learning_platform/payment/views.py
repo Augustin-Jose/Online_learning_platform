@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from payment.models import Payment
 from course.models import Course
@@ -7,14 +8,16 @@ def pay(request,idd):
     if request.method == 'POST':
         ss=request.session["u_id"]
         obj = Payment()
+
         obj.payment_method = request.POST.get('payment_method')
         obj.amount = request.POST.get('amount')
-        obj.status = 'pending'
+        obj.status = 'payed'
         obj.date = datetime.datetime.today()
         obj.time = datetime.datetime.now()
         obj.course_id=idd
         obj.student_id=ss
         obj.save()
+        return HttpResponseRedirect('/payment/payedcourse/')
     obj1 = Course.objects.get(course_id=idd)
     context = {
             'p': obj1
@@ -39,5 +42,10 @@ def reject(request, idd):
     obj.save()
     return paymentDetails(request)
 
-
+def payedcourse(request):
+    obj = Payment.objects.filter(status='payed')
+    context = {
+        'a' : obj
+    }
+    return render(request, 'payment/payedcour.html',context)
 

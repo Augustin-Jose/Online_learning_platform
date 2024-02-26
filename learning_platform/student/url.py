@@ -8,6 +8,7 @@ urlpatterns = [
     url('edit/(?P<idd>\w+)', views.edit),
     url('delete/(?P<idd>\w+)', views.delete),
     # url('edit_student/(?P<idd>\w+)', views.student_edit),
-    url('edit_profile/(?P<idd>\w+)',views.student_edit)
+    url('edit_profile/(?P<idd>\w+)',views.student_edit),
+    # url('forgot/',views.forgot),
 
 ]

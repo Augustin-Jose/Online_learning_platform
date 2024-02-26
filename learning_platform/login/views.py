@@ -32,3 +32,17 @@ def login(request):
             return render(request, 'login/login.html', context)
 
     return render(request, 'login/login.html')
+
+from django.http import JsonResponse
+def check(requst):
+    un=requst.GET.get('username')
+    objs=Login.objects.filter(username=un)
+    res='not'
+    # print('hello')
+    if len(objs)>0:
+        res='exist'
+    msg = {
+
+        'msg': res
+    }
+    return JsonResponse(msg)

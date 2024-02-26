@@ -6,5 +6,6 @@ urlpatterns = [
     url('payment_details/', views.paymentDetails),
     url('approved/(?P<idd>\w+)', views.approve),
     url('rejected/(?P<idd>\w+)', views.reject),
+    url('payedcourse/', views.payedcourse),
 
 ]

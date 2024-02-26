@@ -1,49 +1,63 @@
-{% extends 'temp/index2.html' %}
-{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            /* Set background image */
+            background-image: url('/static/assets/images/Untitled.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .blur {
+            filter: blur(5px);
+            pointer-events: none;
+        }
 
         .login-popup {
-            background-color: #fff;
-            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            padding: 40px;
             border-radius: 8px;
-            box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
             max-width: 400px;
-            height:400px;
-            width: 100%;
+            width: 90%;
             position: relative;
         }
 
         h1 {
-            color: #333;
+            color: #333333;
+            margin-bottom: 20px;
         }
 
         input {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin: 8px 0;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid #cccccc;
             border-radius: 4px;
             outline: none;
-            margin-top:36px;
             font-size: 16px;
         }
 
         button {
             background-color: #4caf50;
-            color: #fff;
-            padding: 12px;
+            color: #ffffff;
+            padding: 12px 20px;
             border: none;
-            margin-top:70px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
@@ -60,38 +74,58 @@
             right: 10px;
             font-size: 20px;
             cursor: pointer;
+            color: #888888;
+        }
+
+        .close-btn:hover {
+            color: #555555;
+        }
+
+        .forgot-password {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<a href="javascript:void(0);"  onclick="openLoginPopup()" title="search"></a>
+<!-- Blur effect will be applied to this div -->
+<div id="blurPage">
 
-<div class="login-popup" id="loginPopup">
-    <span class="close-btn" onclick="closeLoginPopup()">×</span>
-    <h1>Login</h1>
-    <form method="post">
-        {% csrf_token %}
-        <input type="text" placeholder="Username" name="username" required="" class="form-control">
-        <input type="password" placeholder="Password" name="password" required="" class="form-control">
-                <p style="color:#ff0000">{{ x }}</p>
-
-        <button type="submit">Login</button>
-
-    </form>
+    <!-- Login Popup -->
+    <div class="login-popup" id="loginPopup">
+        <span class="close-btn" onclick="closeLoginPopup()">×</span>
+        <h1>Login</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="email" placeholder="Email" name="username" required class="form-control">
+            <input type="password" placeholder="Password" name="password" required class="form-control">
+            <p style="color:#ff0000">{{ x }}</p>
+            <button type="submit">Login</button>
+        </form>
+        <a href="/student/forgot/" class="forgot-password">Forgot Password?</a>
+    </div>
 </div>
 
 <script>
     function openLoginPopup() {
         document.getElementById('loginPopup').style.display = 'block';
+        document.getElementById('blurPage').classList.add('blur');
     }
 
     function closeLoginPopup() {
         document.getElementById('loginPopup').style.display = 'none';
+        document.getElementById('blurPage').classList.remove('blur');
         window.location.href = '/temp/index/';
     }
 </script>
 
 </body>
 </html>
-{% endblock %}

@@ -1,84 +1,219 @@
-{% extends 'temp/index2.html' %}
-{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teacher Registration</title>
-    <style>
-       .teacher-registration-form {
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 400px;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-            text-align: center;
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 700px;
+             background-image: url('/static/assets/images/Untitled.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          background-size: cover;
         }
 
+        .teacher-registration-form {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            text-align: center;
+            position: relative;
+        }
 
+        .teacher-registration-form h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
 
         label {
             display: block;
             font-weight: bold;
-            margin-bottom: px;
+            margin-bottom: 5px;
+            color: #666;
         }
 
-        input, select {
-            width:100%;
-            padding: 8px;
-            margin-top: 5px;
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
             outline: none;
+            font-size: 16px;
         }
 
         button {
             background-color: #4caf50;
             color: #fff;
-            padding: 10px;
+            padding: 12px 20px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
         button:hover {
             background-color: #45a049;
         }
+
+        .fa-info-circle {
+            color: #4caf50;
+            margin-left: 5px;
+        }
+
+        .already-have-account {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .already-have-account a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .already-have-account a:hover {
+            text-decoration: underline;
+        }
+
+        /* Close button style */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888888;
+        }
+
+        .close-btn:hover {
+            color: #555555;
+        }
+
+        /* Error message style */
+        #password-match-error {
+            color: red;
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <form method="post" class="teacher-registration-form">
+    <form method="post" class="teacher-registration-form" onsubmit="return validateForm()">
         {% csrf_token %}
+        <span class="close-btn" onclick="closeLoginPopup()">×</span> <!-- Close button -->
         <h1>Teacher Registration</h1>
+{#                <p>{{ x }}</p>#}
+
         <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" required="" class="form-control">
+            <input type="text" name="name" id="name" >
         </div>
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" id="password" required="" class="form-control">
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm-password" required>
+            <span id="password-match-error">Passwords do not match.</span>
         </div>
 
-        <div class="form-group" >
-            <label for="qualification">Qualification</label>
-            <select name="qualification" id="qualification" required="" class="form-control">
-                <option value="" disabled selected>Select</option>
-                <option value="UG">Undergraduate (UG)</option>
-                <option value="PG">Postgraduate (PG)</option>
-            </select>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" onchange="checkuser()" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="resume">Resume <i class="fas fa-info-circle" title="Upload your resume file"></i></label>
+            <input type="file" name="resume" id="resume" required>
+        </div>
+        <div class="form-group">
+            <label for="resume">Qualification certificate<i class="fas fa-info-circle" title="Upload your resume file"></i></label>
+            <input type="file" name="certificate" id="resume" required>
         </div>
 
         <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" name="subject" id="subject" required="" class="form-control">
+            <input type="text" name="subject" id="subject" required>
         </div>
 
         <button type="submit">Register</button>
+
+        <div class="already-have-account">
+            Already have an account? <a href="/login/login/">Login</a>
+        </div>
     </form>
+
+
+    <!-- Add Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <!-- JavaScript for closing the form -->
+    <script>
+        function closeLoginPopup() {
+            window.location.href = '/temp/index/';
+        }
+
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            if (password != confirmPassword) {
+                document.getElementById("password-match-error").style.display = "block";
+                return false;
+            }
+
+            return true;
+        }
+
+         function checkuser(rc) {
+            var uname = document.getElementById("email").value;
+            $.ajax({
+                url:'/login/check/',
+                data:{
+                    'un':uname,
+                },
+                dataType:'json',
+                success:function (data) {
+                    if(data.msg=='exist')
+                    {
+                        alert('Username Already Exist')
+                        document.getElementById("email").value="";
+                        document.getElementById("email").focus();
+                    }
+                }
+            })
+
+        }
+    </script>
+{% if x %}
+    <script>
+    var message="{{ x }}"
+    alert(message)
+    </script>
+{% endif %}
 </body>
 </html>
-{% endblock %}

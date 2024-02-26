@@ -1,0 +1,198 @@
+{% extends 'course/course_base.html' %}
+{% block base %}
+<html>
+<head>
+    <body>
+<section>
+    <div class="w3l-index-block4 pb-5">
+        <div class="features-bg pb-lg-5 pt-lg-4 py-4">
+            <div class="container">
+                <div class="title-main text-center mx-auto mb-md-4">
+                    <h3 class="title-big">Explore Our Courses</h3>
+                    <p class="sub-title mt-2">Empower yourself through learning. Our platform opens doors to knowledge,
+                        offering diverse courses for your personal and professional growth.</p>
+                </div>
+                <div class="row">
+                    {% for i in a %}
+                    <div class="col-lg-4 col-md-6 features15-col-text">
+                        <a href="" class="d-flex feature-unit align-items-center">
+                            <div class="col-4">
+                                <div class="features15-info">
+                                    <img class="img-fluid" src="/static/assets/images/c2.png" alt=" ">
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="features15-para">
+                                    <h6>Paid</h6>
+{#                                    <a href="/course/web_development/"></a>#}
+
+                                    <h4>{{ i.course.course}}</h4>
+                                    <p>{{ i.course.duration }}
+
+                                    </p>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/python_fundamental/" class="d-flex feature-unit align-items-center active">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/c3.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>Free</h6>#}
+{#                                    <h4>Python Fundamentals</h4>#}
+{#                                    <p>Master basics, data types, and control structures.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/course_pay/" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/c4.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>$100</h6>#}
+{#                                    <h4>SQL Mastery with MySQL</h4>#}
+{#                                    <p>Explore SQL fundamentals and advanced query.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/java_programming_essentials/" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/c5.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>Free</h6>#}
+{#                                    <h4>Java Programming Essentials </h4>#}
+{#                                    <p> Hands-on Java experience covering core concepts.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/machine_learning_basics/" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/c6.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>Free#}
+{#                                    </h6>#}
+{#                                    <h4>Machine Learning Basics</h4>#}
+{#                                    <p>Introduction to ML concepts, algorithms.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/frontend_development_with_react/" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/c1.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>Free</h6>#}
+{#                                    <h4>Frontend Development with React</h4>#}
+{#                                    <p>Build interactive UIs.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/course_pay/" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/paint.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>$50</h6>#}
+{#                                    <h4>Data Science with Pandas</h4>#}
+{#                                    <p>Learn data manipulation and analysis using Pandas</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/cybersecurity_fundamentals" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/history.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>Free</h6>#}
+{#                                    <h4>Cybersecurity Fundamentals</h4>#}
+{#                                    <p>Understand key cybersecurity principles.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="col-lg-4 col-md-6 features15-col-text">#}
+{#                        <a href="/course/course_pay/" class="d-flex feature-unit align-items-center">#}
+{#                            <div class="col-4">#}
+{#                                <div class="features15-info">#}
+{#                                    <img class="img-fluid" src="/static/assets/images/design.png" alt=" ">#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-8">#}
+{#                                <div class="features15-para">#}
+{#                                    <h6>$75</h6>#}
+{#                                    <h4> Cloud Computing with AWS</h4>#}
+{#                                    <p>  Explore cloud computing with AWS.</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </a>#}
+{#                    </div>#}
+                </div>
+                   <!-- pagination -->
+                   <div class="pagination-style">
+                    <ul>
+                        <li> <a href="#none" class="not-allowed" disabled="">
+                                <span class="fa fa-angle-double-left" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                        <li><a class="active" href="#page">1</a></li>
+                        <li>
+                            <a href="#page">2</a>
+                        </li>
+                        <li>
+                            <a href="#page">3</a>
+                        </li>
+                        <li>
+                            <a href="#page"><span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //pagination -->
+            </div>
+
+        </div>
+    </div>
+</section>
+</body>
+</head>
+</html>
+{% endblock %}

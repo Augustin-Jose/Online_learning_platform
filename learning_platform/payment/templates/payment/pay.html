@@ -55,11 +55,12 @@
 </head>
 
 <body>
-    <form method="post" onsubmit="showSuccessAlert()">
+    <form method="post">
         {% csrf_token %}
 
         <label for="paymentMode">Payment Method</label>
         <select id="paymentMode" name="payment_method" required="">
+
             <option value="qrCode">QR Code</option>
             <option value="upi">UPI</option>
             <option value="card">Card</option>
@@ -72,14 +73,14 @@
         <button type="submit">Pay</button>
     </form>
 
-    <script>
-        function showSuccessAlert() {
-            alert("Payment Successful!");
-            // Redirect to the "/course/sql" page after clicking "OK"
-            window.location.href="/course/sql/"
-
-        }
-    </script>
+{#    <script>#}
+{#        function showSuccessAlert() {#}
+{#            alert("Payment Successful!");#}
+{#            // Redirect to the "/course/sql" page after clicking "OK"#}
+{#            window.location.href="/course/sql/"#}
+{##}
+{#        }#}
+{#    </script>#}
 
 </body>
 
