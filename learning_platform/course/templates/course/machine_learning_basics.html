@@ -5,61 +5,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebDev Learning Platform</title>
+    <title>Edufy Learning Platform - Web Development Course</title>
     <!-- Link to Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            padding-top: 60px; /* Adjust for fixed navbar */
+        /* Add your custom CSS styles here */
+
+        /* Additional CSS styles */
+        .navbar {
+            background-color: #009688; /* Updated navbar color */
         }
+
+        .navbar-brand, .nav-link {
+            color:#0b0a12 !important; /* Updated navbar text color */
+        }
+
+        .navbar-brand:hover, .nav-link:hover {
+            color: #f50057 !important; /* Hover color */
+        }
+
+        .course-content {
+            background-color: #fff;
+            padding: 50px;
+            margin-left: 130px; /* Adjusted margin-left for the sidebar */
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            width: calc(100% - -140px); /* Adjusted width to accommodate the sidebar */
+        }
+
+        .sidebar {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            top: 250px; /* Adjusted top position */
+            left: -250px; /* Hide sidebar by default */
+            width: 250px;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar.show {
+            left: 0; /* Show sidebar when active */
+        }
+
+        .menu-icon {
+            position: absolute;
+            top: 180px; /* Adjusted top position */
+            left: 20px; /* Adjusted left position */
+            z-index: 999; /* Ensure it appears above other elements */
+            cursor: pointer; /* Add pointer cursor */
+        }
+
+        .menu-icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Make the icon circular */
+            border: 2px solid #fff; /* Add a border around the icon */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+            transition: transform 0.3s ease; /* Add a smooth transition */
+        }
+
+        .menu-icon img:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+
+    .intro h2 {
+        color: #f50057; /* Set heading color */
+    }
+.chatbot-icon {
+            position: fixed;
+            top: 170px;
+            right: 20px;
+            z-index: 999; /* Ensure it appears above other elements */
+        }
+
+        .chatbot-icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Make the icon circular */
+            border: 2px solid #fff; /* Add a border around the icon */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+            transition: transform 0.3s ease; /* Add a smooth transition */
+        }
+
+        .chatbot-icon img:hover {
+            transform: scale(1.1); /* Increase size on hover */
+        }
+        #chatbot-icon.highlighted img {
+    /* Add styles for the highlighted state */
+    border: 2px solid #ff0000; /* Example: Red border */
+}
+        /* Add more custom styles as needed */
     </style>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">WebDev Platform</a>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Edufy</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item">
-                <a class="nav-link" href="/progress/view/">Progress</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/doubts/doubts/">Doubts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/doubts/doubt_reply/">View Reply</a>
-            </li>
         </ul>
     </div>
 </nav>
 
-<!-- Content Section -->
-<div class="container mt-4" id="content">
-    <h2>Machine Learning </h2><br>
-    <p>
-Machine learning basics using Django involves integrating the popular Django web framework with machine learning functionalities to create intelligent and data-driven web applications. Django simplifies the development process, providing a structured environment for building web applications, while machine learning empowers these applications to make predictions and decisions based on data.
-
-In this context, developers can employ Django to handle user interfaces, manage databases, and control the overall application flow. Integrating machine learning models into Django allows for predictive analysis, recommendation systems, and data-driven insights. Django's Model-View-Controller (MVC) architecture complements the machine learning workflow, enabling seamless incorporation of predictive models into web applications.
-
-Django's flexibility makes it conducive to handling data preprocessing, model training, and serving predictions. Developers can utilize machine learning libraries like scikit-learn or TensorFlow to implement regression, classification, or clustering algorithms within Django projects.
-
-The combined approach of Django and machine learning facilitates the creation of intelligent web applications that adapt and learn from user interactions, enhancing user experiences and providing personalized content. This integration empowers developers to explore innovative ways to leverage data for predictive analytics while maintaining the structure and efficiency offered by the Django framework.</p>
-    <!-- Your web development content goes here -->
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <h5>Menu</h5>
+    <ul>
+        <li><a href="#overview">Course Overview</a></li> <br>
+        <li><a href="#modules">Course Modules</a></li> <br>
+        <li><a href="#project">Course Projects</a></li> <br>
+        <li><a href="#intro">Introduction to django</a></li> <br>
+            <li><a href="#key">Key features</a></li><br>
+            <li><a href="#example">Examples</a></li><br>
+    </ul>
 </div>
 
+<!-- Menu Icon -->
+<div class="menu-icon" id="menuIcon">
+    <img src="/static/assets/images/menubar.png" alt="Menu Icon">
+</div>
+
+<!-- Main Content Section -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-9">
+            <!-- Main Content Section -->
+            <div id="overview" class="course-content">
+                <h2>Web Development Course Overview</h2>
+                <p>Web development using Django offers a robust and efficient framework for building dynamic web applications with Python. Leveraging the Model-View-Controller (MVC) architectural pattern, Django simplifies the development process by providing a high-level, batteries-included environment.</p>
+                <p>Django's Object-Relational Mapping (ORM) system facilitates database interactions, enabling seamless integration with databases like MySQL. The framework's built-in authentication, security, and URL routing streamline common tasks.</p>
+                <!-- Add more content sections as needed -->
+            </div>
+            <div id="modules" class="course-content">
+                <h2>Course Modules</h2>
+                <p>1. Introduction to Django</p>
+                <p>2. Django Models and Views</p>
+                <p>3. Django Forms and Templates</p>
+                <!-- Add more modules as needed -->
+            </div>
+            <div id="project" class="course-content">
+                <h2>Course Projects</h2>
+                <p>1. Build a Blog Application</p>
+                <p>2. Develop a Task Management System</p>
+                <p>3. Create an E-commerce Website</p>
+                <!-- Add more projects as needed -->
+            </div>
+            <div id="intro" class="course-content">
+                <h2>Introduction to django</h2>
+               <p class="intro">Django is a high-level Python web framework that enables rapid development of secure and maintainable web applications. It follows the Model-View-Controller (MVC) architectural pattern, which separates the logic of an application into three interconnected components: the model, the view, and the controller.</p>
+
+            </div>
+            <div id="key" class="course-content"><h3>Key Features:</h3>
+
+        Batteries-Included: Django comes with a set of tools and libraries that streamline the development process, allowing developers to focus on building the application's unique features rather than reinventing the wheel.<br><br>
+        ORM (Object-Relational Mapping): Django provides a powerful ORM that abstracts the database layer and allows developers to interact with the database using Python objects. This simplifies database operations and reduces the risk of SQL injection attacks.<br><br>
+     Admin Interface: Django's admin interface is a built-in feature that automatically generates a user-friendly interface for managing application data. Developers can customize the admin interface to suit the specific needs of their application.<br><br>
+        <!-- Add more key features as needed -->
+
+            </div><div id="example" class="course-content">
+    <h3>Examples</h3>
+   <details>
+  <summary>Hello world in Django</summary>
+<p id="django-program">
+    <pre>
+        <code>
+            from django.http import HttpResponse
+
+            def hello_world(request):
+                return HttpResponse("Hello, World!")
+
+            # urls.py
+            from django.urls import path
+            from .views import hello_world
+
+            urlpatterns = [
+                path('hello/', hello_world),
+            ]
+        </code>
+    </pre>
+</p>
+
+<br>
+</details>
+             <br>
+             <details>
+  <summary>Simple Django model</summary>
+<p id="django-program">
+    <pre>
+        <code>
+           # models.py
+from django.db import models
+
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return self.name
+
+        </code>
+    </pre>
+</p>
+
+
+</details>
+            <br>
+             <details>
+  <summary>Django Forms</summary>
+<p id="django-program">
+    <pre>
+        <code>
+           # forms.py
+from django import forms
+
+class ContactForm(forms.Form):
+    name = forms.CharField(max_length=100)
+    email = forms.EmailField()
+    message = forms.CharField(widget=forms.Textarea)
+
+        </code>
+    </pre>
+</p>
+
+
+</details>
+
+
+           </div>
+<div class="chatbot-icon" id="chatbot-icon highlighted">
+   <a href="/message/msg"> <img src="/static/assets/images/chat.jpg" alt="chatbot"></a>
+
+</div>
+        </div>
+    </div>
+</div>
 
 <!-- Link to Bootstrap JS and Popper.js (for dropdowns, modals, etc.) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<!-- Your custom JavaScript code goes here (if needed) -->
+<script>
+    $(document).ready(function(){
+        $('#menuIcon').click(function(){
+            $('#sidebar').toggleClass('show');
+        });
+    });
+</script>
 
 </body>
 </html>
+
 {% endblock %}

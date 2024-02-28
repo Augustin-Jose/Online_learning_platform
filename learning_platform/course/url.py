@@ -23,6 +23,15 @@ urlpatterns = [
 
     url('Free_courses/', views.Free_courses),
 
+    url('datascience/',views.data_science),
+    url('cloudcomputing/',views.cloud_computing),
     url('sql/',views.sql),
+
+    url('addq/',views.quiz),
+    url('vvvv/',views.view_quiz),
+    url('upload/(?P<idd>\w+)',views.upload),
+    url('view_quiz_ans/',views.view_quiz_ans)
+
+
 
 ]

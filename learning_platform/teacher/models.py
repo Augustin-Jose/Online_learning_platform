@@ -14,6 +14,7 @@ class Teacher(models.Model):
     resume = models.CharField(max_length=255)
     subject = models.CharField(max_length=255)
     status = models.CharField(max_length=50)
+    phn = models.CharField(max_length=10)
 
     class Meta:
         managed = False

@@ -3,6 +3,7 @@ from login import views
 
 urlpatterns = [
     url('login/',views.login),
-    # url('check/',views.check),
+
+
 
 ]

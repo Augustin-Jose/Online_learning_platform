@@ -83,6 +83,21 @@
                         </select>
                     </td>
                 </tr>
+            <tr>
+                    <td>Quiz</td>
+                    <td>
+                        <select name="quiz" class="form-control">
+                            <option>--------Select--------</option>
+                            {% for i in z %}
+                            <option value="{{ i.quiz_id }}">{{ i.quiz }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+             <tr>
+                    <td>Quiz</td>
+                    <td><input type="text" name="quiz" required class="form-control"></td>
+                </tr>
                 <tr>
                     <td>Task Progress</td>
                     <td><input type="text" name="progress" required class="form-control"></td>

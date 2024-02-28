@@ -1,0 +1,72 @@
+{% extends 'course/coursebase2.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* Center the table */
+        body {
+
+            margin:50px;
+        }
+
+        /* Style for the table */
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 800px; /* Limit the maximum width of the table */
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden; /* Hide overflowing content */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2; /* Light gray background for table headers */
+        }
+
+        tr:hover {
+            background-color: #f5f5f5; /* Light gray background on hover */
+        }
+
+        td {
+            /* Ensure images are centered vertically */
+            vertical-align: middle;
+        }
+
+        img {
+            /* Ensure images maintain aspect ratio */
+            max-height: 100px;
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <table border="1">
+        <tr>
+            <th>Student Name</th>
+            <th>Upload</th>
+            <th>Date</th>
+        </tr>
+        {% for i in x %}
+        <tr>
+            <td>{{ i.student.name}}</td>
+            <td><a href="/static/{{ i.upload }}"><img src="/static/{{ i.upload }}" alt="Uploaded Image"></a></td>
+            <td>{{ i.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
+{% endblock %}

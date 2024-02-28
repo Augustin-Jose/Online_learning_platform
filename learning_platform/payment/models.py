@@ -15,6 +15,7 @@ class Payment(models.Model):
     # course_id = models.IntegerField()
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
 
+
     class Meta:
         managed = False
         db_table = 'payment'

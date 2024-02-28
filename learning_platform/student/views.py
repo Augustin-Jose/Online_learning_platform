@@ -52,6 +52,7 @@ def student_edit(request,idd):
         ob.password=obj.password
         ob.username=obj.email
         ob.save()
+
         return admin_man_user(request)
     return render(request, 'student/studentedit.html',context)
 
@@ -84,10 +85,3 @@ def ad_v_stud(request):
         'a': obj
     }
     return render(request, 'student/ad_v_stud.html',context)
-#
-# def forgot(request):
-#     obj = Student.objects.all()
-#     context = {
-#         'a': obj
-#     }
-#     return render(request, 'student/forgotpassword.html',context)

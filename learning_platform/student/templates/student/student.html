@@ -9,21 +9,18 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
-            padding: 0;
+            padding: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-image: url('/static/assets/images/Untitled.png');
-            background-size: cover;
+            background-image: url('/static/assets/images/pieces-blue-stationery.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+            background-size: cover;
 
+
+        }
 
         .container {
             background-color: #fff;
@@ -80,6 +77,14 @@
             margin-top: 5px;
         }
 
+        .password-error-list {
+            font-size: 12px;
+            margin-top: 5px;
+            color: red;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
         .already-have-account {
             text-align: center;
             margin-top: 10px;
@@ -106,6 +111,26 @@
         .close-btn:hover {
             color: #555555;
         }
+        label[for="age"] {
+            display: block;
+            margin-bottom: 10px;
+
+        }
+input[type="date"] {
+    width: calc(100% - 24px);
+    height: 30px;/* Adjusted width */
+
+
+
+
+
+}
+        .age-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: lighter;
+    margin-bottom: 10px;
+}
     </style>
 </head>
 <body>
@@ -115,56 +140,142 @@
     <form method="post" onsubmit="return validateForm()">
         {% csrf_token %}
         <h1>Student Registration</h1>
-{#        <p>{{ x }}</p>#}
-        <input type="text" name="name" placeholder="Name" >
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" onchange="checkuser()" id="email" placeholder="Email" required>
+        <input type="password" name="password" id="password" placeholder="Password" required oninput="validatePasswordComplexity()">
+        <ul id="password_errors" class="password-error-list" style="display: none;">
+            <li id="length_error" style="display: none;">Password must contain at least 8 characters.</li>
+            <li id="uppercase_error" style="display: none;">Password must contain at least one uppercase letter.</li>
+            <li id="lowercase_error" style="display: none;">Password must contain at least one lowercase letter.</li>
+            <li id="number_error" style="display: none;">Password must contain at least one number.</li>
+            <li id="special_error" style="display: none;">Password must contain at least one special character.</li>
+        </ul>
+        <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+        <br><label>Gender</label>
+        <input type="radio" name="gender" id="male" value="male" required>
+        <label for="male">Male</label>
 
-        <input type="email" name="email" placeholder="Email" required>
+        <input type="radio" name="gender" id="female" value="female" required>
+        <label for="female">Female</label>
 
-        <input type="password" name="password" placeholder="Password" id="password" required>
+        <input type="radio" name="gender" id="other" value="other" required>
+        <label for="other">Other</label><br><br>
 
-        <input type="password" name="confirm_password" placeholder="Confirm Password" id="confirm_password" required>
-
-        <select name="gender" required>
-            <option value="">Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="other">Other</option>
-        </select>
-
-        <input type="number" name="age" placeholder="Age" required>
-
+        <label for="age" class="age-label">Date of Birth</label>
+        <input type="date" name="age"  id="age" placeholder="Age" required><br><br>
         <input type="submit" value="Register">
         <div id="password_match_error" class="error-message" style="display: none;">Passwords do not match.</div>
-
         <div class="already-have-account">
             Already have an account? <a href="/login/login/">Login</a>
         </div>
     </form>
 </div>
-
 <script>
     function validateForm() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirm_password").value;
 
+
+         var dobInput = document.getElementById("age").value;
+        var dob = new Date(dobInput);
+        var today = new Date();
+        var age = today.getFullYear() - dob.getFullYear();
+        var monthDiff = today.getMonth() - dob.getMonth();
+
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+            age--; // Decrease age if birthday hasn't occurred yet this year
+        }
+
+        if (age < 12) {
+            alert("You must be at least 18 years old to register.");
+            return false;
+        }
+
         if (password !== confirmPassword) {
             document.getElementById("password_match_error").style.display = "block";
             return false;
         }
+        showSuccessMessage()
+
 
         return true;
+    }
+     function showSuccessMessage() {
+            alert("Registered successfully!");
+        }
+function checkuser(rc) {
+            var uname = document.getElementById("email").value;
+            $.ajax({
+                url:'/login/check/',
+                data:{
+                    'un':uname,
+                },
+                dataType:'json',
+                success:function (data) {
+                    if(data.msg=='exist')
+                    {
+                        alert('Username Already Exist')
+                        document.getElementById("email").value="";
+                        document.getElementById("email").focus();
+                    }
+                }
+            })
+        }
+
+    function validatePasswordComplexity() {
+        var password = document.getElementById("password").value;
+        var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        var errors = document.getElementById("password_errors");
+
+        var lengthError = document.getElementById("length_error");
+        var uppercaseError = document.getElementById("uppercase_error");
+        var lowercaseError = document.getElementById("lowercase_error");
+        var numberError = document.getElementById("number_error");
+        var specialError = document.getElementById("special_error");
+
+        lengthError.style.display = "none";
+        uppercaseError.style.display = "none";
+        lowercaseError.style.display = "none";
+        numberError.style.display = "none";
+        specialError.style.display = "none";
+
+        var valid = true;
+
+        if (password.length < 8) {
+            lengthError.style.display = "block";
+            valid = false;
+        }
+
+        if (!/[A-Z]/.test(password)) {
+            uppercaseError.style.display = "block";
+            valid = false;
+        }
+
+        if (!/[a-z]/.test(password)) {
+            lowercaseError.style.display = "block";
+            valid = false;
+        }
+
+        if (!/\d/.test(password)) {
+            numberError.style.display = "block";
+            valid = false;
+        }
+
+        if (!/[@$!%*?&]/.test(password)) {
+            specialError.style.display = "block";
+            valid = false;
+        }
+
+        errors.style.display = valid ? "none" : "block";
+
+        return valid;
     }
 
     function closePage() {
         window.location.href = '/temp/index/';
     }
 </script>
-{% if x %}
-    <script>
-    var message="{{ x }}"
-    alert(message)
-    </script>
-{% endif %}
+
 
 </body>
 </html>

@@ -46,7 +46,8 @@
     <br><br><br><br>
     <h1>Teacher Notifications</h1>
 
-    <form method="post"><center>
+    <form method="post">
+    {% csrf_token %}
         <table border="1" cellspacing="0" cellpadding="10" width="100%">
             <thead>
                 <tr>
@@ -70,5 +71,6 @@
 </center>
 </body>
 </html>
+
 
 {% endblock %}

@@ -1,6 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from login.models import Login
+from django.shortcuts import render, redirect
+
 
 # Create your views here.
 
@@ -46,3 +48,7 @@ def check(requst):
         'msg': res
     }
     return JsonResponse(msg)
+
+
+
+

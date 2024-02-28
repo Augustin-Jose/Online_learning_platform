@@ -31,12 +31,14 @@
     <table>
         <tr>
             <th>Course Name</th>
+             <th>Description</th>
             <th>Course Duration</th>
             <th>Course Fee</th>
         </tr>
         {% for i in b %}
         <tr>
             <td> {{i.course}}</td>
+             <td> {{i.description}}</td>
             <td>{{ i.duration }}</td>
             <td>{{ i.course_fee }}</td>
 

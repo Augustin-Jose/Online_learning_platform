@@ -43,7 +43,8 @@ def reject(request, idd):
     return paymentDetails(request)
 
 def payedcourse(request):
-    obj = Payment.objects.filter(status='payed')
+    ss=request.session["u_id"]
+    obj = Payment.objects.filter(status='payed',student_id=ss)
     context = {
         'a' : obj
     }

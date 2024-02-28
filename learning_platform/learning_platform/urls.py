@@ -32,6 +32,7 @@ urlpatterns = [
     url('teacher/', include('teacher.url')),
     url('tutorial/',include('tutorial.url')),
     url('temp/', include('temp.url')),
+    url('message/',include('message.url')),
     url('$',views.index),
 
 

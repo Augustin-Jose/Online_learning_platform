@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from course.models import Course
+from course.models import Quiz
+import datetime
+from django.core.files.storage import FileSystemStorage
 # Create your views here.
 
 def course(request):
     if request.method == 'POST':
         obj = Course()
         obj.course = request.POST.get('course')
+        obj.description = request.POST.get('description')
         obj.course_fee = request.POST.get('fee')
         obj.duration = request.POST.get('duration')
         obj.save()
@@ -67,6 +71,20 @@ def cybersecurity_fundamentals  (request):
     }
     return render(request, 'course/cybersecuurity_fundamental.html', context)
 
+def data_science (request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/dataScience.html', context)
+
+def cloud_computing(request):
+    obj=Course.objects.all()
+    context={
+        'b':obj
+    }
+    return render(request, 'course/Cloud computing.html', context)
+
 def Free_courses  (request):
     obj=Course.objects.all()
     context={
@@ -80,3 +98,43 @@ def sql  (request):
         'b':obj
     }
     return render(request, 'course/sql.html', context)
+
+def quiz(request):
+    ss = request.session["u_id"]
+    if request.method =='POST':
+        obj=Quiz()
+        obj.teacher_id = ss
+        obj.student_id=1
+        obj.quiz = request.POST.get('quiz')
+        obj.date = datetime.datetime.today()
+        obj.upload = 'pending'
+        obj.save()
+    return render(request, 'course/add_quiz.html')
+
+
+def view_quiz(request):
+    obj = Quiz.objects.all()
+    context = {
+        'a': obj
+    }
+    return render(request, 'course/view_quiz.html',context)
+
+def upload(request,idd):
+    ss=request.session["u_id"]
+    if request.method=='POST':
+        obj=Quiz.objects.get(quiz_id=idd)
+        myfile=request.FILES['img']
+        fs=FileSystemStorage()
+        filename=fs.save(myfile.name,myfile)
+        obj.upload=myfile.name
+        obj.student_id=ss
+        obj.save()
+    return render(request,'course/upload.html')
+
+def view_quiz_ans(request):
+    obj=Quiz.objects.all()
+    context={
+        'x':obj
+    }
+    return render(request,'course/view_quiz_ans.html',context)
+
