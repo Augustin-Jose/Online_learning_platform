@@ -1,12 +1,12 @@
-{% extends 'course/course_base.html' %}
-{% block base %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Details</title>
-    <style>
+
+
+ <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
@@ -51,7 +51,7 @@
             cursor: pointer;
         }
     </style>
-</head>
+    </head>
 <body>
     <form method="post">
         {% csrf_token %}
@@ -72,12 +72,33 @@
             </tr>
             <tr>
                 <td>Age</td>
-                <td><input type="number" name="age" value="{{ e.age }}" required=""></td>
+                <td><input type="date" id="age" name="age" value="{{ e.age }}" onchange="validateAge()" required=""></td>
             </tr>
         </table>
         <br>
         <center><input type="submit" value="Update"></center>
     </form>
+
+    <script>
+        function validateAge() {
+            var dobInput = document.getElementById("age").value;
+            var dob = new Date(dobInput);
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+            var monthDiff = today.getMonth() - dob.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--; // Decrease age if birthday hasn't occurred yet this year
+            }
+
+            if (age < 18) {
+                // Show error message
+                document.getElementById("age").setCustomValidity("Minimum age must be 18");
+            } else {
+                // Clear error message
+                document.getElementById("age").setCustomValidity("");
+            }
+        }
+    </script>
 </body>
 </html>
-{% endblock %}

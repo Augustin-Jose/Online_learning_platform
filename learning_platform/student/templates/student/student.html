@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #e6dbda;
             margin: 0;
             padding: 90px;
             display: flex;
@@ -23,7 +23,7 @@
         }
 
         .container {
-            background-color: #fff;
+            background: #f7f0f0;
             border-radius: 8px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
             width: 320px;
@@ -131,6 +131,13 @@ input[type="date"] {
     font-weight: lighter;
     margin-bottom: 10px;
 }
+        #eyeIcon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -140,9 +147,11 @@ input[type="date"] {
     <form method="post" onsubmit="return validateForm()">
         {% csrf_token %}
         <h1>Student Registration</h1>
-        <input type="text" name="name" placeholder="Name">
+       <input type="text" name="name" placeholder="Name" pattern="[A-Za-z]+" title="Please enter letters only" required>
+
         <input type="email" name="email" onchange="checkuser()" id="email" placeholder="Email" required>
         <input type="password" name="password" id="password" placeholder="Password" required oninput="validatePasswordComplexity()">
+
         <ul id="password_errors" class="password-error-list" style="display: none;">
             <li id="length_error" style="display: none;">Password must contain at least 8 characters.</li>
             <li id="uppercase_error" style="display: none;">Password must contain at least one uppercase letter.</li>
@@ -274,6 +283,7 @@ function checkuser(rc) {
     function closePage() {
         window.location.href = '/temp/index/';
     }
+
 </script>
 
 

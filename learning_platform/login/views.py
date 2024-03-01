@@ -49,6 +49,3 @@ def check(requst):
     }
     return JsonResponse(msg)
 
-
-
-

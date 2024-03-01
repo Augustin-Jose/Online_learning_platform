@@ -108,9 +108,11 @@
             <input type="email" placeholder="Email" name="username" required class="form-control">
             <input type="password" placeholder="Password" name="password" required class="form-control">
             <p style="color:#ff0000">{{ x }}</p>
-            <button type="submit">Login</button>
+            <button type="submit" id="loginButton">Login</button>
+            <div id="loadingIndicator" style="display: none;">Logging in...</div>
+
         </form>
-        <a href="/login/password_reset/" class="forgot-password">Forgot Password?</a>
+        <a href="{% url 'password_reset_form' %}" class="forgot-password">Forget Password?</a>
     </div>
 </div>
 
@@ -126,6 +128,22 @@
         window.location.href = '/temp/index/';
     }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#loginButton').click(function() {
+        // Show loading indicator
+        $('#loadingIndicator').show();
+
+        // Simulate login process with a delay
+        setTimeout(function() {
+            // After a delay, proceed to the next page
+            window.location.href = "next_page_url";
+        }, 2000); // Adjust the delay time as needed (in milliseconds)
+    });
+});
+</script>
+
 
 </body>
 </html>

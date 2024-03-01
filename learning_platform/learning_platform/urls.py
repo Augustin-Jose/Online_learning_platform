@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf.urls import url, include
 from temp import  views
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('communication/',include('communication.url')),
@@ -33,7 +34,9 @@ urlpatterns = [
     url('tutorial/',include('tutorial.url')),
     url('temp/', include('temp.url')),
     url('message/',include('message.url')),
+
     url('$',views.index),
+
 
 
 
